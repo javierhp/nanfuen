@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+}
+
+.logo {
+    display: block;
+    text-indent: -9999px;
+    width: 7em;
+    height: 7em;
+    background: url(../img/Fulllogo1b.svg);
+    background-size: 7em 7em;
+    background-position: -7em -9em;
+}
