@@ -1,4 +1,4 @@
-*{
+* {
     background-color: black;
 }
 
@@ -10,4 +10,17 @@
     background: url(../img/Fulllogo1b.svg);
     background-size: 7em 7em;
     background-position: -7em -9em;
+}
+
+.card-header, .btn-primary {
+    background-color: rgb(131, 168, 255);
+}
+
+.card-text {
+    background-color: rgb(131, 168, 255);
+}
+
+.btn-outline-primary {
+    color: rgb(131, 168, 255);
+    border-color: rgb(131, 168, 255);
 }
