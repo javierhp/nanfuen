@@ -1,4 +1,8 @@
 [DONE] Name issue
 [DONE] Price symbol
 [DONE] Min width
-- Multiple lines
+[DONE] Multiple lines
+- Missing test images
+- Deploy to site
+- Fix texts
+- Update catalog
