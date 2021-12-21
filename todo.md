@@ -3,6 +3,6 @@
 [DONE] Min width
 [DONE] Multiple lines
 [DONE] Missing test images
-- Deploy to site
-- Fix texts
-- Update catalog
+[DONE] Deploy to site
+[DONE] Fix texts
+- Update catalog trees
