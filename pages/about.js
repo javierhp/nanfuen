@@ -1,10 +1,10 @@
+import Layout from "../components/layout";
 import Menu from "../components/menu";
 
 export default function About() {
     return (
-      <>
-        <Menu></Menu>
+      <Layout>
         Test about
-      </>
+      </Layout>
     );
   }
