@@ -5,15 +5,18 @@ export default function Menu() {
   return (
     <ul>
       <li>
-        <Link href="/">Home</Link>
+        <Link href="/">Inicio</Link>
       </li>
       <li>
-        <Link href="/about">About Us</Link>
+        <Link href="/about">Acerca de nosotros</Link>
       </li>
       <li>
-        <Link href="/posts/first-post">Blog Post</Link>
+        <Link href="/classes">Clases y Talleres</Link>
       </li>
       <li>
+        <Link href="/catalog">Catalogo</Link>
+      </li>
+      {/* <li>
         <ul>
         {products.map((pid) => (
             <li key={pid}>
@@ -23,7 +26,7 @@ export default function Menu() {
             </li>
         ))}
         </ul>
-      </li>
+      </li> */}
     </ul>
   )
 }

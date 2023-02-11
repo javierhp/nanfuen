@@ -1,9 +1,9 @@
 import Layout from "../components/layout";
 
-export default function About() {
+export default function Catalog() {
     return (
       <Layout>
-        Test about
+        Catalog
       </Layout>
     );
   }
