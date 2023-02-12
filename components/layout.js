@@ -4,12 +4,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import Container from 'react-bootstrap/Container';
 
 const name = 'Nanfuen';
 export const siteTitle = 'Nanfuen Sample Website';
 
 export default function Layout({ children }) {
-    return <div className={styles.container}>
+    return <Container>
         <Head>
             <link rel="icon" href="/favicon.ico" />
             <meta
@@ -24,10 +25,14 @@ export default function Layout({ children }) {
             />
             <meta name="og:title" content={siteTitle} />
             <meta name="twitter:card" content="summary_large_image" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <header className={styles.header}>
-            <Menu></Menu>
-        </header>
-        {children}
-    </div>;
+
+        <div className="d-flex h-100 p-3 mr-auto flex-column w-100">
+            <header>
+                <Menu></Menu>
+            </header>
+            {children}
+        </div>
+    </Container>;
 }
