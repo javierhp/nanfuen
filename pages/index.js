@@ -9,29 +9,35 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <Layout>
-      <div className={styles.container}>
-        <Head>
-          <title>Nanfuen</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
-        <main>
-          <section className={utilStyles.headingMd}>
-            <p>Nanfuen bonsai Argentina</p>
-            <p>
-              (This is a sample website - you’ll be building a site like this on{' '}
-              <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-              <Image
-                src="/images/small.png" // Route of the image file
-                height={144} // Desired size with correct aspect ratio
-                width={320} // Desired size with correct aspect ratio
-                alt="Your Name"
-              />
-            </p>
-          </section>
+      <div className='container'>
+        <main role="main" className="inner cover">
+          <Image
+            src="/images/Fulllogo1b.svg" // Route of the image file
+            height={200} // Desired size with correct aspect ratio
+            width={320} // Desired size with correct aspect ratio
+            alt="Nanfuen"
+            className="rounded"
+          />
+          <h1 className="cover-heading">Nanfuen Bonsai</h1>
+          
+        <p className="lead">Ideado en Japon, con raices argentinas</p>
+        <p className="lead">
+          <a href="https://www.facebook.com/NanfuenBonsai" target="_blank" className="btn">
+            <img src="/images/fb_logo.png" width="20em"/>
+            Visitanos en Facebook
+          </a>
+          <a href="https://www.instagram.com/nan.fu.en" target="_blank" className="btn">
+            <img src="/images/in_logo.png" width="25em"/>
+            Seguinos en Instagram
+          </a>
+          <a href="https://www.youtube.com/channel/UCe56m0m-lP51rcDG-O1sjpg" target="_blank" className="btn">
+            <img src="/images/yt_logo.png" width="25em"/>
+            Miranos en Youtube
+          </a>
+        </p>
         </main>
 
-        <footer>
+        {/* <footer>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             target="_blank"
@@ -40,7 +46,7 @@ export default function Home() {
             Powered by{' '}
             <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
           </a>
-        </footer>
+        </footer> */}
       </div>
     </Layout>
   )

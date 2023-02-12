@@ -12,6 +12,7 @@ export const siteTitle = 'Nanfuen Sample Website';
 export default function Layout({ children }) {
     return <Container>
         <Head>
+            <title>Nanfuen</title>
             <link rel="icon" href="/favicon.ico" />
             <meta
                 name="description"
@@ -27,11 +28,10 @@ export default function Layout({ children }) {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-
+        <header>
+            <Menu></Menu>
+        </header>
         <div className="d-flex h-100 p-3 mr-auto flex-column w-100">
-            <header>
-                <Menu></Menu>
-            </header>
             {children}
         </div>
     </Container>;
