@@ -16,25 +16,25 @@ export default function Home() {
             height={200} // Desired size with correct aspect ratio
             width={320} // Desired size with correct aspect ratio
             alt="Nanfuen"
-            className="rounded"
+            className="rounded col-md-12"
           />
-          <h1 className="cover-heading">Nanfuen Bonsai</h1>
-          
-        <p className="lead">Ideado en Japon, con raices argentinas</p>
-        <p className="lead">
-          <a href="https://www.facebook.com/NanfuenBonsai" target="_blank" className="btn">
-            <img src="/images/fb_logo.png" width="20em"/>
-            Visitanos en Facebook
-          </a>
-          <a href="https://www.instagram.com/nan.fu.en" target="_blank" className="btn">
-            <img src="/images/in_logo.png" width="25em"/>
-            Seguinos en Instagram
-          </a>
-          <a href="https://www.youtube.com/channel/UCe56m0m-lP51rcDG-O1sjpg" target="_blank" className="btn">
-            <img src="/images/yt_logo.png" width="25em"/>
-            Miranos en Youtube
-          </a>
-        </p>
+          <h1 className="cover-heading text-center">Nanfuen Bonsai</h1>
+
+          <p className="lead text-center">Ideado en Japon, con raices argentinas</p>
+          <p className="lead text-center">
+            <a href="https://www.facebook.com/NanfuenBonsai" target="_blank" className="btn">
+              <img src="/images/fb_logo.png" width="20em" />
+              Visitanos en Facebook
+            </a>
+            <a href="https://www.instagram.com/nan.fu.en" target="_blank" className="btn">
+              <img src="/images/in_logo.png" width="25em" />
+              Seguinos en Instagram
+            </a>
+            <a href="https://www.youtube.com/channel/UCe56m0m-lP51rcDG-O1sjpg" target="_blank" className="btn">
+              <img src="/images/yt_logo.png" width="25em" />
+              Miranos en Youtube
+            </a>
+          </p>
         </main>
 
         {/* <footer>
