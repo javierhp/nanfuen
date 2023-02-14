@@ -1,9 +1,4 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import Link from 'next/link';
-import Menu from '../components/menu';
 import Layout from "../components/layout";
-import utilStyles from '../styles/utils.module.css';
 import Image from 'next/image';
 
 export default function Home() {
