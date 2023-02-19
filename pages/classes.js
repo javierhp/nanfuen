@@ -1,9 +1,17 @@
 import Layout from "../components/layout";
+import pricingData from '../public/data/classes-pricing.json';
+import PricingGrid from '../components/planPricingGrid';
+import PlanSearchBar from "../components/planSearchBar";
+import React, { useState } from 'react';
 
 export default function Classes() {
-    return (
-      <Layout>
-        Classes
-      </Layout>
-    );
-  }
+  const plans = pricingData;
+  const [filteredPlans, setFilteredPlans] = useState(pricingData);
+  return (
+    <Layout>
+      Classes
+      <PlanSearchBar plans={pricingData} setFilteredPlans={setFilteredPlans} />
+      <PricingGrid plans={filteredPlans} />
+    </Layout>
+  );
+}

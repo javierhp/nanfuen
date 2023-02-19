@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Virtual Basic Pack",
+        "category": "virtual",
+        "pack": "monthly",
+        "price": "$10/month",
+        "priceUSD": "10",
+        "priceARS": "1500",
+        "features": [
+            "Access to all virtual classes",
+            "1-hour consultation per month",
+            "Free equipment rental"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Virtual Pro Pack",
+        "category": "virtual",
+        "pack": "3 months",
+        "price": "$27/3 months",
+        "priceUSD": "27",
+        "priceARS": "4000",
+        "features": [
+            "Access to all virtual classes",
+            "2-hour consultation per month",
+            "Free equipment rental"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Virtual Premium Pack",
+        "category": "virtual",
+        "pack": "6 months",
+        "price": "$50/6 months",
+        "priceUSD": "50",
+        "priceARS": "7500",
+        "features": [
+            "Access to all virtual classes",
+            "4-hour consultation per month",
+            "Free equipment rental"
+        ],
+        "enabled": false
+    },
+    {
+        "name": "Virtual Elite Pack",
+        "category": "virtual",
+        "pack": "12 months",
+        "price": "$90/year",
+        "priceUSD": "90",
+        "priceARS": "13500",
+        "features": [
+            "Access to all virtual classes",
+            "Unlimited consultation per month",
+            "Free equipment rental"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Regular Classes",
+        "category": "in person",
+        "type": "regular classes",
+        "price": "$80/month",
+        "priceUSD": "80",
+        "priceARS": "12000",
+        "features": [
+            "Access to all regular classes",
+            "Free equipment rental",
+            "Free shirt"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Workshop",
+        "category": "in person",
+        "type": "workshop",
+        "price": "$120/weekend",
+        "priceUSD": "120",
+        "priceARS": "18000",
+        "features": [
+            "Access to all workshop classes",
+            "Free equipment rental",
+            "Free lunch"
+        ],
+        "enabled": false
+    }
+]
