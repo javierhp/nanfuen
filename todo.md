@@ -1,4 +1,3 @@
-- Static html
+- Navigation on export
 - Catalog
 - Filters
-- something else?
