@@ -9,8 +9,9 @@ export default function Classes() {
   const [filteredPlans, setFilteredPlans] = useState(pricingData);
   return (
     <Layout>
-      Estos son los formatos de talleres y clases que ofrecemos por el momento
+      <p>Estos son los formatos de talleres y clases que ofrecemos por el momento</p>
       <PlanSearchBar plans={pricingData} setFilteredPlans={setFilteredPlans} />
+      <p></p>
       <PricingGrid plans={filteredPlans} />
     </Layout>
   );
