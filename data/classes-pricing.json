@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Clases semanales",
+        "category": "virtual",
+        "pack": "Por mes",
+        "priceUSD": "20",
+        "priceARS": "3500",
+        "features": [
+            "Clases domingos de 7 a 9 PM Argentina",
+            "Acceso a mas de 70 clases grabadas",
+            "Trabajos enfocados en temporada"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Pack trimestral: Clases semanales",
+        "category": "virtual",
+        "pack": "3 meses",
+        "priceUSD": "50",
+        "priceARS": "8820",
+        "features": [
+            "Ahorras 16%",
+            "Clases domingos de 7 a 9 PM Argentina",
+            "Acceso a mas de 70 clases grabadas",
+            "Trabajos enfocados en temporada"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Pack semestral: Clases semanales",
+        "category": "virtual",
+        "pack": "6 meses",
+        "priceUSD": "100",
+        "priceARS": "17500",
+        "features": [
+            "1 mes gratis!",
+            "Clases domingos de 7 a 9 PM Argentina",
+            "Acceso a mas de 70 clases grabadas",
+            "Trabajos enfocados en temporada"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Clases regulares",
+        "category": "in person",
+        "priceUSD": "20",
+        "priceARS": "3500",
+        "features": [
+            "Clases de 2hs",
+            "Orientado a los trabajos de la temporada",
+            "Materiales incluidos"
+        ],
+        "enabled": false
+    },
+    {
+        "name": "Workshop",
+        "category": "in person",
+        "priceUSD": "30",
+        "priceARS": "7000",
+        "features": [
+            "Taller intensivo de un dia",
+            "Podes traer tu material o usar el del vivero",
+            "Trabajos de temporada"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Trabajos particulares de coleccion",
+        "category": "in person",
+        "priceUSD": "Desde 50",
+        "priceARS": "Desde 12000",
+        "features": [
+            "Manetimientos",
+            "Diseños",
+            "Refinados",
+            "Precio final a acordar"
+        ],
+        "enabled": true
+    }
+]
