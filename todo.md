@@ -1,3 +1,2 @@
-- Navigation on export
 - Catalog
 - Filters
