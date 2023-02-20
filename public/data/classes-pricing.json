@@ -1,86 +1,80 @@
 [
     {
-        "name": "Virtual Basic Pack",
+        "name": "Clases semanales",
         "category": "virtual",
-        "pack": "monthly",
-        "price": "$10/month",
-        "priceUSD": "10",
-        "priceARS": "1500",
+        "pack": "Por mes",
+        "priceUSD": "20",
+        "priceARS": "3500",
         "features": [
-            "Access to all virtual classes",
-            "1-hour consultation per month",
-            "Free equipment rental"
+            "Clases domingos de 7 a 9 PM Argentina",
+            "Acceso a mas de 70 clases grabadas",
+            "Trabajos enfocados en temporada"
         ],
         "enabled": true
     },
     {
-        "name": "Virtual Pro Pack",
+        "name": "Pack trimestral: Clases semanales",
         "category": "virtual",
-        "pack": "3 months",
-        "price": "$27/3 months",
-        "priceUSD": "27",
-        "priceARS": "4000",
-        "features": [
-            "Access to all virtual classes",
-            "2-hour consultation per month",
-            "Free equipment rental"
-        ],
-        "enabled": true
-    },
-    {
-        "name": "Virtual Premium Pack",
-        "category": "virtual",
-        "pack": "6 months",
-        "price": "$50/6 months",
+        "pack": "3 meses",
         "priceUSD": "50",
-        "priceARS": "7500",
+        "priceARS": "8820",
         "features": [
-            "Access to all virtual classes",
-            "4-hour consultation per month",
-            "Free equipment rental"
+            "Ahorras 16%",
+            "Clases domingos de 7 a 9 PM Argentina",
+            "Acceso a mas de 70 clases grabadas",
+            "Trabajos enfocados en temporada"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Pack semestral: Clases semanales",
+        "category": "virtual",
+        "pack": "6 meses",
+        "priceUSD": "100",
+        "priceARS": "17500",
+        "features": [
+            "1 mes gratis!",
+            "Clases domingos de 7 a 9 PM Argentina",
+            "Acceso a mas de 70 clases grabadas",
+            "Trabajos enfocados en temporada"
+        ],
+        "enabled": true
+    },
+    {
+        "name": "Clases regulares",
+        "category": "in person",
+        "priceUSD": "20",
+        "priceARS": "3500",
+        "features": [
+            "Clases de 2hs",
+            "Orientado a los trabajos de la temporada",
+            "Materiales incluidos"
         ],
         "enabled": false
-    },
-    {
-        "name": "Virtual Elite Pack",
-        "category": "virtual",
-        "pack": "12 months",
-        "price": "$90/year",
-        "priceUSD": "90",
-        "priceARS": "13500",
-        "features": [
-            "Access to all virtual classes",
-            "Unlimited consultation per month",
-            "Free equipment rental"
-        ],
-        "enabled": true
-    },
-    {
-        "name": "Regular Classes",
-        "category": "in person",
-        "type": "regular classes",
-        "price": "$80/month",
-        "priceUSD": "80",
-        "priceARS": "12000",
-        "features": [
-            "Access to all regular classes",
-            "Free equipment rental",
-            "Free shirt"
-        ],
-        "enabled": true
     },
     {
         "name": "Workshop",
         "category": "in person",
-        "type": "workshop",
-        "price": "$120/weekend",
-        "priceUSD": "120",
-        "priceARS": "18000",
+        "priceUSD": "30",
+        "priceARS": "7000",
         "features": [
-            "Access to all workshop classes",
-            "Free equipment rental",
-            "Free lunch"
+            "Taller intensivo de un dia",
+            "Podes traer tu material o usar el del vivero",
+            "Trabajos de temporada"
         ],
-        "enabled": false
+        "enabled": true
+    },
+    {
+        "name": "Trabajos particulares de coleccion",
+        "category": "in person",
+        "priceUSD": "Desde 50",
+        "priceARS": "Desde 12000",
+        "features": [
+            "Manetimientos",
+            "Diseños",
+            "Refinados",
+            "Precio final a acordar"
+        ],
+        "enabled": true
     }
 ]

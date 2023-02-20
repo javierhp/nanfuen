@@ -29,15 +29,15 @@ const PlanSearchBar = ({ plans, setFilteredPlans }) => {
     return (
         <Form>
             <Form.Group controlId="category">
-                <Form.Label>Category:</Form.Label>
+                <Form.Label>Categoria:</Form.Label>
                 <Form.Control as="select" value={selectedCategory} onChange={handleCategoryChange}>
-                    <option value="all">All</option>
-                    <option value="virtual">Virtual</option>
-                    <option value="in person">In Person</option>
+                    <option value="all">Todos</option>
+                    <option value="virtual">Virtuales</option>
+                    <option value="in person">Presenciales</option>
                 </Form.Control>
             </Form.Group>
 
-            <div className="plan-search-bar__sort">
+            {/* <div className="plan-search-bar__sort">
                 <label htmlFor="sort-toggle">Sort by price:</label>
                 <div className="form-check form-switch">
                     <input
@@ -48,7 +48,7 @@ const PlanSearchBar = ({ plans, setFilteredPlans }) => {
                         onChange={handleSortByPriceChange}
                     />
                 </div>
-            </div>
+            </div> */}
         </Form>
     );
 };
