@@ -36,19 +36,6 @@ const PlanSearchBar = ({ plans, setFilteredPlans }) => {
                     <option value="in person">Presenciales</option>
                 </Form.Control>
             </Form.Group>
-
-            {/* <div className="plan-search-bar__sort">
-                <label htmlFor="sort-toggle">Sort by price:</label>
-                <div className="form-check form-switch">
-                    <input
-                        className="form-check-input"
-                        type="checkbox"
-                        id="sort-toggle"
-                        checked={sortByPrice}
-                        onChange={handleSortByPriceChange}
-                    />
-                </div>
-            </div> */}
         </Form>
     );
 };
