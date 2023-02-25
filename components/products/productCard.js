@@ -1,5 +1,7 @@
 import { React, useState } from 'react';
 import { Card, Badge } from 'react-bootstrap';
+import PotDetails from './PotDetails';
+import TreeDetails from './treeDetails';
 
 const ProductCard = ({ product }) => {
   const [sold, setSold] = useState(product.available === "NO");
@@ -20,6 +22,10 @@ const ProductCard = ({ product }) => {
         <Card.Text style={{ width: '18rem', textDecoration: product.available === 'NO' ? 'line-through' : 'none' }}>
           {product.priceARS && <text>Precio: {parseFloat(product.priceARS).toFixed(0)}$</text>}
         </Card.Text>
+        <div>
+          {product.type === "Pot" && <PotDetails product={product} />}
+          {product.type === "tree" && <TreeDetails product={product} />}
+        </div>
       </Card.Body>
     </Card>
   );
