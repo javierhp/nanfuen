@@ -14,14 +14,11 @@ const ProductGrid = () => {
     });
 
     const handleFilterChange = (filters) => {
-        console.log(filters);
         // Update the state with the new filter values
         setFilterState(filters);
 
         // Filter the products array based on the new filter values
         const filteredProducts = productsData.filter((product) => {
-            console.log(product);
-            debugger;
             // Check if the product type matches the selected product type filter
             if ((filters.type && filters.type !== "all") && product.type !== filters.type) {
                 return false;
