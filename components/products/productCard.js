@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
           {product.name}
         </Card.Title>
         <Card.Text style={{ width: '18rem', textDecoration: product.available === 'NO' ? 'line-through' : 'none' }}>
-          {product.priceARS && <text>Precio: {parseFloat(product.priceARS).toFixed(0)}$</text>}
+          {product.priceARS && <text>Precio: AR${parseFloat(product.priceARS).toFixed(0)}</text>}
         </Card.Text>
         <div>
           {product.type === "Pot" && <PotDetails product={product} />}
