@@ -73,9 +73,12 @@ const ProductGrid = () => {
             </Row>
             <Row>
                 {filteredProducts.map((product) => (
-                    <Col key={product.code} xs={12} md={6}>
-                        <ProductCard product={product} />
-                    </Col>
+                    <>{
+                        product.hasImage !== "NO" &&
+                        <Col key={product.code} xs={12} md={6}>
+                            <ProductCard product={product} />
+                        </Col>
+                    }</>
                 ))}
             </Row>
         </Container>

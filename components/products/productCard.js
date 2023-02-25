@@ -3,8 +3,6 @@ import { Card } from 'react-bootstrap';
 
 const ProductCard = ({ product }) => {
   return (
-    <>{
-      product.hasImage !== "NO" &&
       <Card>
         <Card.Img variant="top" src={product.hasImage !== "NO" ? `/images/catalog/${product.code}.jpg` : ''} alt="SIN IMAGEN" />
         <Card.Body>
@@ -17,8 +15,6 @@ const ProductCard = ({ product }) => {
           </Card.Text>
         </Card.Body>
       </Card>
-    }
-    </>
   );
 };
 
