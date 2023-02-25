@@ -40,7 +40,7 @@ const FilterBar = ({ onFilterChange, onPriceChange, onResetFilters, filterState 
                         <option value="NO">No</option>
                     </Form.Control>
                 </Col>
-                <Col md={6}>
+                {/* <Col md={6}>
                     <Form.Label>Price Range</Form.Label>
                     <Row>
                         <Col>
@@ -65,7 +65,7 @@ const FilterBar = ({ onFilterChange, onPriceChange, onResetFilters, filterState 
                             <Button onClick={onResetFilters}>Reset Filters</Button>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>
         </Form>
     );
