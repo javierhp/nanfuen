@@ -4,37 +4,40 @@ import FilterBar from './FilterBar';
 import ProductCard from './ProductCard';
 import productsData from '../../public/data/prodcuts.json';
 
-const ProductGrid = () => {
+const ProductGrid = ({category}) => {
     const defaultFilters = {
-        type: "all",
+        type: category,
         available: "YES",
         minPrice: 0,
         maxPrice: 1000
     };
+
     const [filteredProducts, setFilteredProducts] = useState(productsData.filter((product) => {
         // Check if the product type matches the selected product type filter
-        if ((defaultFilters.type && defaultFilters.type !== "all") && product.type !== defaultFilters.type) {
+        if (defaultFilters.type && product.type !== defaultFilters.type) {
             return false;
         }
 
         // Check if the product availability matches the selected product availability filter
-        if ((defaultFilters.available && defaultFilters.available !== "all") && product.available !== defaultFilters.available) {
+        if ((defaultFilters.available) && product.available !== defaultFilters.available) {
             return false;
         }
 
         // Return true if the product passes all filter checks
         return true;
     }));
+    
     const [filterState, setFilterState] = useState(defaultFilters);
 
     const handleFilterChange = (filters) => {
+
         // Update the state with the new filter values
         setFilterState(filters);
 
         // Filter the products array based on the new filter values
         const filteredProducts = productsData.filter((product) => {
             // Check if the product type matches the selected product type filter
-            if ((filters.type && filters.type !== "all") && product.type !== filters.type) {
+            if (filters.type && product.type !== filters.type) {
                 return false;
             }
 

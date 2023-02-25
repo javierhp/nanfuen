@@ -1,2 +1,1 @@
-- Catalog
-- Filters
+- Sort by name, price

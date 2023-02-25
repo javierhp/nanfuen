@@ -17,7 +17,11 @@ export default function Menu() {
           <Nav.Link href="/#home">Home</Nav.Link>
           <Nav.Link href="/about">Acerca de nosotros</Nav.Link>
           <Nav.Link href="/classes">Clases y Talleres</Nav.Link>
-          <Nav.Link href="/catalog">Catalogo</Nav.Link>
+          <NavDropdown title="Catalogo" id="basic-nav-dropdown">
+            <NavDropdown.Item href="/catalog">Todo</NavDropdown.Item>
+            <NavDropdown.Item href="/catalog/tree">Arboles</NavDropdown.Item>
+            <NavDropdown.Item href="/catalog/Pot">Macetas</NavDropdown.Item>
+          </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
