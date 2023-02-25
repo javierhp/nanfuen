@@ -5,13 +5,27 @@ import ProductCard from './ProductCard';
 import productsData from '../../public/data/prodcuts.json';
 
 const ProductGrid = () => {
-    const [filteredProducts, setFilteredProducts] = useState(productsData);
-    const [filterState, setFilterState] = useState({
+    const defaultFilters = {
         type: "all",
-        available: "",
+        available: "YES",
         minPrice: 0,
         maxPrice: 1000
-    });
+    };
+    const [filteredProducts, setFilteredProducts] = useState(productsData.filter((product) => {
+        // Check if the product type matches the selected product type filter
+        if ((defaultFilters.type && defaultFilters.type !== "all") && product.type !== defaultFilters.type) {
+            return false;
+        }
+
+        // Check if the product availability matches the selected product availability filter
+        if ((defaultFilters.available && defaultFilters.available !== "all") && product.available !== defaultFilters.available) {
+            return false;
+        }
+
+        // Return true if the product passes all filter checks
+        return true;
+    }));
+    const [filterState, setFilterState] = useState(defaultFilters);
 
     const handleFilterChange = (filters) => {
         // Update the state with the new filter values
@@ -48,11 +62,13 @@ const ProductGrid = () => {
     const handleResetFilters = () => {
         console.log("reset filters");
     };
+
     return (
         <Container>
             <Row>
                 <Col>
                     <FilterBar filterState={filterState} onFilterChange={handleFilterChange} onResetFilters={handleResetFilters} />
+                    <p></p>
                 </Col>
             </Row>
             <Row>

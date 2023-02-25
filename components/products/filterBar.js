@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 
-const FilterBar = ({ onFilterChange, onPriceChange, onResetFilters, filterState }) => {
+const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
     const onTypeFilterChange = (e) => {
         const newFilters = {
             type: e.target.value,
@@ -25,18 +25,18 @@ const FilterBar = ({ onFilterChange, onPriceChange, onResetFilters, filterState 
         <Form>
             <Row>
                 <Col md={3}>
-                    <Form.Label>Type</Form.Label>
+                    <Form.Label>Categoria</Form.Label>
                     <Form.Control as="select" name="type" onChange={onTypeFilterChange} defaultValue={filterState.type}>
-                        <option value="">All</option>
-                        <option value="Pot">Pot</option>
-                        <option value="tree">Tree</option>
+                        <option value="">Todas</option>
+                        <option value="Pot">Macetas</option>
+                        <option value="tree">Arboles</option>
                     </Form.Control>
                 </Col>
                 <Col md={3}>
-                    <Form.Label>Available</Form.Label>
+                    <Form.Label>En stock</Form.Label>
                     <Form.Control as="select" name="available" onChange={onAvailableFilterChange} defaultValue={filterState.available}>
-                        <option value="">All</option>
-                        <option value="YES">Yes</option>
+                        <option value="">Todos</option>
+                        <option value="YES">Si</option>
                         <option value="NO">No</option>
                     </Form.Control>
                 </Col>
