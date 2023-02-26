@@ -1,1 +1,2 @@
-- Sort by name, price
+- Reset filters
+- Filter accordeon

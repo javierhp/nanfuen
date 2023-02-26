@@ -7,7 +7,8 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
             type: e.target.value,
             available: filterState.available,
             minPrice: filterState.minPrice,
-            maxPrice: filterState.maxPrice
+            maxPrice: filterState.maxPrice,
+            sortBy: filterState.sortBy
         };
         onFilterChange(newFilters);
     };
@@ -16,7 +17,18 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
             type: filterState.type,
             available: e.target.value,
             minPrice: filterState.minPrice,
-            maxPrice: filterState.maxPrice
+            maxPrice: filterState.maxPrice,
+            sortBy: filterState.sortBy
+        };
+        onFilterChange(newFilters);
+    };
+    const onSortChange = (e) => {
+        const newFilters = {
+            type: filterState.type,
+            available: filterState.available,
+            minPrice: filterState.minPrice,
+            maxPrice: filterState.maxPrice,
+            sortBy: e.target.value
         };
         onFilterChange(newFilters);
     };
@@ -38,6 +50,15 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
                         <option value="">Todos</option>
                         <option value="YES">Si</option>
                         <option value="NO">No</option>
+                    </Form.Control>
+                </Col>
+                <Col md={3}>
+                    <Form.Label>Ordenar por</Form.Label>
+                    <Form.Control as="select" name="sortBy" onChange={onSortChange} defaultValue={filterState.sortBy}>
+                        <option value="price-asc">Precio menor a mayor</option>
+                        <option value="price-desc">Precio mayor a menor</option>
+                        <option value="name-asc">Nombre A-Z</option>
+                        <option value="name-desc">Nombre Z-A</option>
                     </Form.Control>
                 </Col>
                 {/* <Col md={6}>

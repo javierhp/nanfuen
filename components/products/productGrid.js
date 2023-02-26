@@ -4,15 +4,30 @@ import FilterBar from './FilterBar';
 import ProductCard from './ProductCard';
 import productsData from '../../public/data/prodcuts.json';
 
-const ProductGrid = ({category}) => {
+const ProductGrid = ({ category }) => {
+    function sortBySelection(selection, products) {
+        switch (selection) {
+            case "price-asc":
+                return products.sort((a, b) => Number(a.priceARS) < Number(b.priceARS) ? -1 : 1);
+            case "price-desc":
+                return products.sort((a, b) => Number(a.priceARS) > Number(b.priceARS) ? -1 : 1);
+            case "name-desc":
+                return products.sort((a, b) => a.name > b.name ? -1 : 1);
+            case "name-asc":
+            default:
+                return products.sort((a, b) => a.name < b.name ? -1 : 1);
+        }
+    }
+
     const defaultFilters = {
         type: category,
         available: "YES",
         minPrice: 0,
-        maxPrice: 1000
+        maxPrice: 1000,
+        sortBy: "name-asc"
     };
 
-    const [filteredProducts, setFilteredProducts] = useState(productsData.filter((product) => {
+    const [filteredProducts, setFilteredProducts] = useState(sortBySelection(defaultFilters.sortBy,productsData.filter((product) => {
         // Check if the product type matches the selected product type filter
         if (defaultFilters.type && product.type !== defaultFilters.type) {
             return false;
@@ -25,8 +40,8 @@ const ProductGrid = ({category}) => {
 
         // Return true if the product passes all filter checks
         return true;
-    }));
-    
+    })));
+
     const [filterState, setFilterState] = useState(defaultFilters);
 
     const handleFilterChange = (filters) => {
@@ -35,7 +50,7 @@ const ProductGrid = ({category}) => {
         setFilterState(filters);
 
         // Filter the products array based on the new filter values
-        const filteredProducts = productsData.filter((product) => {
+        var filteredProducts = productsData.filter((product) => {
             // Check if the product type matches the selected product type filter
             if (filters.type && product.type !== filters.type) {
                 return false;
@@ -58,8 +73,11 @@ const ProductGrid = ({category}) => {
             return true;
         });
 
+        filteredProducts = sortBySelection(filters.sortBy, filteredProducts);
+
         // Update the state with the filtered products array
         setFilteredProducts(filteredProducts);
+
     };
 
     const handleResetFilters = () => {
