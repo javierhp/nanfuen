@@ -1,65 +1,71 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 
 const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
+    const [filters, setFilters] = useState(filterState);
+
+    useEffect(() => {
+        console.log("called");
+        setFilters(filterState);
+    }, [filterState]);
+
     const onTypeFilterChange = (e) => {
         const newFilters = {
-            type: e.target.value,
-            available: filterState.available,
-            minPrice: filterState.minPrice,
-            maxPrice: filterState.maxPrice,
-            sortBy: filterState.sortBy
+            ...filterState,
+            type: e.target.value
         };
         onFilterChange(newFilters);
     };
     const onAvailableFilterChange = (e) => {
         const newFilters = {
-            type: filterState.type,
-            available: e.target.value,
-            minPrice: filterState.minPrice,
-            maxPrice: filterState.maxPrice,
-            sortBy: filterState.sortBy
+            ...filterState,
+            available: e.target.value
         };
         onFilterChange(newFilters);
     };
     const onSortChange = (e) => {
         const newFilters = {
-            type: filterState.type,
-            available: filterState.available,
-            minPrice: filterState.minPrice,
-            maxPrice: filterState.maxPrice,
+            ...filterState,
             sortBy: e.target.value
         };
         onFilterChange(newFilters);
+    };
+    const handleResetFilters = () => {
+        onResetFilters();
     };
 
     return (
         <Form>
             <Row>
-                <Col md={3}>
+                <Col md={4}>
                     <Form.Label>Categoria</Form.Label>
-                    <Form.Control as="select" name="type" onChange={onTypeFilterChange} defaultValue={filterState.type}>
+                    <Form.Control as="select" name="type" onChange={onTypeFilterChange} value={filters.type}>
                         <option value="">Todas</option>
                         <option value="Pot">Macetas</option>
                         <option value="tree">Arboles</option>
                     </Form.Control>
                 </Col>
-                <Col md={3}>
+                <Col md={4}>
                     <Form.Label>En stock</Form.Label>
-                    <Form.Control as="select" name="available" onChange={onAvailableFilterChange} defaultValue={filterState.available}>
+                    <Form.Control as="select" name="available" onChange={onAvailableFilterChange} value={filters.available}>
                         <option value="">Todos</option>
                         <option value="YES">Si</option>
                         <option value="NO">No</option>
                     </Form.Control>
                 </Col>
-                <Col md={3}>
+                <Col md={4}>
                     <Form.Label>Ordenar por</Form.Label>
-                    <Form.Control as="select" name="sortBy" onChange={onSortChange} defaultValue={filterState.sortBy}>
+                    <Form.Control as="select" name="sortBy" onChange={onSortChange} value={filters.sortBy}>
                         <option value="price-asc">Precio menor a mayor</option>
                         <option value="price-desc">Precio mayor a menor</option>
                         <option value="name-asc">Nombre A-Z</option>
                         <option value="name-desc">Nombre Z-A</option>
                     </Form.Control>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Button variant="secondary" onClick={handleResetFilters}>Reiniciar filtros</Button>
                 </Col>
                 {/* <Col md={6}>
                     <Form.Label>Price Range</Form.Label>
@@ -81,9 +87,6 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
                                 onChange={onPriceChange}
                                 defaultValue={filterState.maxPrice}
                             />
-                        </Col>
-                        <Col>
-                            <Button onClick={onResetFilters}>Reset Filters</Button>
                         </Col>
                     </Row>
                 </Col> */}

@@ -81,7 +81,7 @@ const ProductGrid = ({ category }) => {
     };
 
     const handleResetFilters = () => {
-        console.log("reset filters");
+        handleFilterChange(defaultFilters);
     };
 
     return (
