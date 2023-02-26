@@ -36,7 +36,7 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
 
     return (
         <Form>
-            <Row>
+            <Row className="mb-2">
                 <Col md={4}>
                     <Form.Label>Categoria</Form.Label>
                     <Form.Control as="select" name="type" onChange={onTypeFilterChange} value={filters.type}>
@@ -63,7 +63,7 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
                     </Form.Control>
                 </Col>
             </Row>
-            <Row>
+            <Row className="mb-2">
                 <Col>
                     <Button variant="secondary" onClick={handleResetFilters}>Reiniciar filtros</Button>
                 </Col>
