@@ -5,7 +5,6 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
     const [filters, setFilters] = useState(filterState);
 
     useEffect(() => {
-        console.log("called");
         setFilters(filterState);
     }, [filterState]);
 
