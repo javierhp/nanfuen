@@ -1,4 +1,3 @@
-- Filter accordeon
 - Test deploy
 - Set trees Not available
 - Publish

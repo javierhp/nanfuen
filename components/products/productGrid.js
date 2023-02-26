@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import FilterBar from './FilterBar';
 import ProductCard from './ProductCard';
 import productsData from '../../public/data/prodcuts.json';
@@ -27,7 +27,7 @@ const ProductGrid = ({ category }) => {
         sortBy: "name-asc"
     };
 
-    const [filteredProducts, setFilteredProducts] = useState(sortBySelection(defaultFilters.sortBy,productsData.filter((product) => {
+    const [filteredProducts, setFilteredProducts] = useState(sortBySelection(defaultFilters.sortBy, productsData.filter((product) => {
         // Check if the product type matches the selected product type filter
         if (defaultFilters.type && product.type !== defaultFilters.type) {
             return false;
@@ -86,12 +86,14 @@ const ProductGrid = ({ category }) => {
 
     return (
         <Container>
-            <Row>
-                <Col>
-                    <FilterBar filterState={filterState} onFilterChange={handleFilterChange} onResetFilters={handleResetFilters} />
-                    <p></p>
-                </Col>
-            </Row>
+            <Accordion defaultActiveKey="0">
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header>Filtros</Accordion.Header>
+                    <Accordion.Body>
+                        <FilterBar filterState={filterState} onFilterChange={handleFilterChange} onResetFilters={handleResetFilters} />
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
             <Row>
                 {filteredProducts.map((product) => (
                     <>{
