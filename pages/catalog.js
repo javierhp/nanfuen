@@ -4,7 +4,7 @@ import ProductGrid from "../components/products/productGrid";
 export default function Catalog() {
   return (
     <Layout>
-      <h1>Estamos renovando el catalogo, por favor visitanos mas tarde</h1>
+      <h2>Sumaremos nuevos productos en el catalogo a medida se encuentren disponibles, esten atentos!</h2>
       <ProductGrid></ProductGrid>
     </Layout>
   );

@@ -7,7 +7,7 @@ export default function CatalogByCategory() {
     const { category } = router.query;
     return (
         <Layout>
-            <h1>Estamos renovando el catalogo, por favor visitanos mas tarde.</h1>
+            <h2>Sumaremos nuevos productos en el catalogo a medida se encuentren disponibles, esten atentos!</h2>
             {category &&
                 <ProductGrid category={category}></ProductGrid>}
         </Layout>
