@@ -13,3 +13,21 @@ export default function CatalogByCategory() {
         </Layout>
     );
 }
+
+
+export async function getStaticProps({ params: { category } }) {
+    return { props: { category } };
+}
+
+export async function getStaticPaths() {
+    const categories = ["Pot", "tree"];
+
+    const paths = categories.map((c) => {
+        return { params: { category: c } };
+    });
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
