@@ -1,3 +1,3 @@
-- Test deploy
-- Set trees Not available
 - Publish
+- Filter by species
+- Add new products
