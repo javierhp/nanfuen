@@ -4,47 +4,47 @@
         "category": "virtual",
         "pack": "Por mes",
         "priceUSD": "20",
-        "priceARS": "3500",
+        "priceARS": "0",
         "features": [
             "Clases domingos de 7 a 9 PM Argentina",
             "Acceso a mas de 70 clases grabadas",
             "Trabajos enfocados en temporada"
         ],
-        "enabled": true
+        "enabled": false
     },
     {
         "name": "Pack trimestral: Clases semanales",
         "category": "virtual",
         "pack": "3 meses",
         "priceUSD": "50",
-        "priceARS": "8820",
+        "priceARS": "0",
         "features": [
             "Ahorras 16%",
             "Clases domingos de 7 a 9 PM Argentina",
             "Acceso a mas de 70 clases grabadas",
             "Trabajos enfocados en temporada"
         ],
-        "enabled": true
+        "enabled": false
     },
     {
         "name": "Pack semestral: Clases semanales",
         "category": "virtual",
         "pack": "6 meses",
         "priceUSD": "100",
-        "priceARS": "17500",
+        "priceARS": "0",
         "features": [
             "1 mes gratis!",
             "Clases domingos de 7 a 9 PM Argentina",
             "Acceso a mas de 70 clases grabadas",
             "Trabajos enfocados en temporada"
         ],
-        "enabled": true
+        "enabled": false
     },
     {
         "name": "Clases regulares",
         "category": "in person",
         "priceUSD": "20",
-        "priceARS": "3500",
+        "priceARS": "0",
         "features": [
             "Clases de 2hs",
             "Orientado a los trabajos de la temporada",
