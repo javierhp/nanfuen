@@ -16,6 +16,7 @@ export default function Menu() {
         <Nav className="me-auto">
           <Nav.Link href="/#home">Home</Nav.Link>
           <Nav.Link href="/about">Acerca de nosotros</Nav.Link>
+          <Nav.Link href="/shohin">Pasion por los shohin</Nav.Link>
           <Nav.Link href="/classes">Clases y Talleres</Nav.Link>
           <NavDropdown title="Catalogo" id="basic-nav-dropdown">
             <NavDropdown.Item href="/catalog">Todo</NavDropdown.Item>
