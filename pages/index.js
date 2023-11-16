@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "../components/layout";
 import Image from 'next/image';
 
@@ -16,6 +17,7 @@ export default function Home() {
           <h1 className="cover-heading text-center">Nanfuen Bonsai</h1>
 
           <p className="lead text-center">Ideado en Japon, con raices argentinas</p>
+
           <p className="lead text-center">
             <a href="https://www.facebook.com/NanfuenBonsai" target="_blank" className="btn">
               <img src="/images/fb_logo.png" width="20em" />
@@ -29,6 +31,9 @@ export default function Home() {
               <img src="/images/yt_logo.png" width="25em" />
               Miranos en Youtube
             </a>
+          </p>
+          <p className="lead text-center">Pasion por los shohin! Queres saber mas?
+            <Link href="/shohin">Hace click aca</Link>
           </p>
         </main>
 
