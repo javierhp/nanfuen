@@ -4,73 +4,73 @@
         "category": "virtual",
         "pack": "Por mes",
         "priceUSD": "20",
-        "priceARS": "0",
+        "priceARS": "12000",
         "features": [
             "Clases domingos de 7 a 9 PM Argentina",
-            "Acceso a mas de 70 clases grabadas",
+            "Acceso a más de 70 clases grabadas",
             "Trabajos enfocados en temporada"
         ],
-        "enabled": false
+        "enabled": true
     },
     {
         "name": "Pack trimestral: Clases semanales",
         "category": "virtual",
         "pack": "3 meses",
         "priceUSD": "50",
-        "priceARS": "0",
+        "priceARS": "30000",
         "features": [
             "Ahorras 16%",
             "Clases domingos de 7 a 9 PM Argentina",
-            "Acceso a mas de 70 clases grabadas",
+            "Acceso a más de 70 clases grabadas",
             "Trabajos enfocados en temporada"
         ],
-        "enabled": false
+        "enabled": true
     },
     {
         "name": "Pack semestral: Clases semanales",
         "category": "virtual",
         "pack": "6 meses",
         "priceUSD": "100",
-        "priceARS": "0",
+        "priceARS": "60000",
         "features": [
             "1 mes gratis!",
             "Clases domingos de 7 a 9 PM Argentina",
-            "Acceso a mas de 70 clases grabadas",
+            "Acceso a más de 70 clases grabadas",
             "Trabajos enfocados en temporada"
         ],
-        "enabled": false
+        "enabled": true
     },
     {
         "name": "Clases regulares",
         "category": "in person",
         "priceUSD": "20",
-        "priceARS": "0",
+        "priceARS": "12000",
         "features": [
             "Clases de 2hs",
             "Orientado a los trabajos de la temporada",
             "Materiales incluidos"
         ],
-        "enabled": false
+        "enabled": true
     },
     {
         "name": "Workshop",
         "category": "in person",
         "priceUSD": "30",
-        "priceARS": "7000",
+        "priceARS": "18000",
         "features": [
-            "Taller intensivo de un dia",
+            "Taller intensivo de un día",
             "Podes traer tu material o usar el del vivero",
             "Trabajos de temporada"
         ],
         "enabled": true
     },
     {
-        "name": "Trabajos particulares de coleccion",
+        "name": "Trabajos particulares de colección",
         "category": "in person",
         "priceUSD": "Desde 50",
-        "priceARS": "Desde 12000",
+        "priceARS": "Desde 30000",
         "features": [
-            "Manetimientos",
+            "Mantenimientos",
             "Diseños",
             "Refinados",
             "Precio final a acordar"
