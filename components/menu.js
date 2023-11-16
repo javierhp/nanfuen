@@ -22,6 +22,7 @@ export default function Menu() {
             <NavDropdown.Item href="/catalog">Todo</NavDropdown.Item>
             <NavDropdown.Item href="/catalog/tree">Arboles</NavDropdown.Item>
             <NavDropdown.Item href="/catalog/Pot">Macetas</NavDropdown.Item>
+            <NavDropdown.Item href="/catalog/Tools">Herramientas</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

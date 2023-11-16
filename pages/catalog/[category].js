@@ -20,7 +20,7 @@ export async function getStaticProps({ params: { category } }) {
 }
 
 export async function getStaticPaths() {
-    const categories = ["Pot", "tree"];
+    const categories = ["Pot", "tree", "Tools"];
 
     const paths = categories.map((c) => {
         return { params: { category: c } };

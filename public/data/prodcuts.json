@@ -997,5 +997,33 @@
         "name": "Pino negro 25",
         "code": "PN025",
         "hasImage": "YES"
+    },
+    {
+        "type": "Tools",
+        "code": 1243,
+        "name": "Corta alambres 23cm",
+        "available": "YES",
+        "priceUSD": 50.71
+    },
+    {
+        "type": "Tools",
+        "code": 8000,
+        "name": "Cepillos de detalles (x unidad)",
+        "available": "YES",
+        "priceUSD": 6.24
+    },
+    {
+        "type": "Tools",
+        "code": 8003,
+        "name": "Cinta de injerto New medel 25mmx30M",
+        "available": "YES",
+        "priceUSD": 15.60
+    },
+    {
+        "type": "Tools",
+        "code": 8004,
+        "name": "Cinta de injerto fina",
+        "available": "YES",
+        "priceUSD": 7.80
     }
 ]

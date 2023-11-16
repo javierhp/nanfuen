@@ -42,6 +42,7 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
                         <option value="">Todas</option>
                         <option value="Pot">Macetas</option>
                         <option value="tree">Arboles</option>
+                        <option value="tools">Herramientas</option>
                     </Form.Control>
                 </Col>
                 <Col md={4}>

@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import { Card, Badge } from 'react-bootstrap';
 import PotDetails from './PotDetails';
 import TreeDetails from './treeDetails';
+import ToolDetails from './toolDetails';
 
 const ProductCard = ({ product }) => {
   const [sold, setSold] = useState(product.available === "NO");
@@ -28,6 +29,7 @@ const ProductCard = ({ product }) => {
         <div>
           {product.type === "Pot" && <PotDetails product={product} />}
           {product.type === "tree" && <TreeDetails product={product} />}
+          {product.type === "tools" && <ToolDetails product={product} />}
         </div>
       </Card.Body>
     </Card>
