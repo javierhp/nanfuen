@@ -1000,30 +1000,51 @@
     },
     {
         "type": "Tools",
-        "code": 1243,
-        "name": "Corta alambres 23cm",
+        "code": 2075,
+        "name": "Tijera 18cm",
         "available": "YES",
-        "priceUSD": 50.71
+        "priceUSD": 38.00
     },
     {
         "type": "Tools",
-        "code": 8000,
-        "name": "Cepillos de detalles (x unidad)",
+        "code": 1204,
+        "name": "Concava 21cm",
         "available": "YES",
-        "priceUSD": 6.24
+        "priceUSD": 65.00
+    },
+    {
+        "type": "Tools",
+        "code": 1221,
+        "name": "Esferica 21cm",
+        "available": "YES",
+        "priceUSD": 65.00
+    },
+    {
+        "type": "Tools",
+        "code": 6001,
+        "name": "Pasta selladora",
+        "available": "YES",
+        "priceUSD": 9.00
     },
     {
         "type": "Tools",
         "code": 8003,
         "name": "Cinta de injerto New medel 25mmx30M",
         "available": "YES",
-        "priceUSD": 15.60
+        "priceUSD": 19.00
     },
     {
         "type": "Tools",
-        "code": 8004,
-        "name": "Cinta de injerto fina",
+        "code": 2049,
+        "name": "Tijera mariposa 20cm",
         "available": "YES",
-        "priceUSD": 7.80
+        "priceUSD": 34.00
+    },
+    {
+        "type": "Tools",
+        "code": 2308,
+        "name": "Corta alambre tijera 16cm",
+        "available": "YES",
+        "priceUSD": 20.00
     }
 ]

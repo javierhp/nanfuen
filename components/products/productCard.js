@@ -21,9 +21,9 @@ const ProductCard = ({ product }) => {
           {product.name}
         </Card.Title>
         <Card.Text style={{ width: '18rem', textDecoration: product.available === 'NO' ? 'line-through' : 'none' }}>
-          {product.priceARS && <span>Precio: {Number(product.priceARS).toLocaleString("es-AR", {
+          {product.priceUSD && <span>Precio: {Number(product.priceUSD).toLocaleString("es-AR", {
             style: "currency",
-            currency: "ARS",
+            currency: "USD",
           })}</span>}
         </Card.Text>
         <div>
