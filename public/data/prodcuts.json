@@ -954,7 +954,7 @@
         "priceARS": "56160",
         "img": "",
         "priceUSD": "140",
-        "available": "YES",
+        "available": "NO",
         "name": "Pino negro 23",
         "code": "PN023",
         "hasImage": "YES"
@@ -1010,28 +1010,28 @@
         "type": "Tools",
         "code": 6001,
         "name": "Pasta selladora",
-        "available": "YES",
+        "available": "NO",
         "priceUSD": 9.00
     },
     {
         "type": "Tools",
         "code": 8003,
         "name": "Cinta de injerto New medel 25mmx30M",
-        "available": "YES",
+        "available": "NO",
         "priceUSD": 19.00
     },
     {
         "type": "Tools",
         "code": 2049,
         "name": "Tijera mariposa 20cm",
-        "available": "YES",
+        "available": "NO",
         "priceUSD": 34.00
     },
     {
         "type": "Tools",
         "code": 2308,
         "name": "Corta alambre tijera 16cm",
-        "available": "YES",
+        "available": "NO",
         "priceUSD": 20.00
     }
 ]
