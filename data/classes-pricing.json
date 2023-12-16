@@ -44,7 +44,7 @@
         "name": "Clases regulares",
         "category": "in person",
         "priceUSD": "20",
-        "priceARS": "12000",
+        "priceARS": "16000",
         "features": [
             "Clases de 2hs",
             "Orientado a los trabajos de la temporada",
@@ -56,7 +56,7 @@
         "name": "Workshop",
         "category": "in person",
         "priceUSD": "30",
-        "priceARS": "18000",
+        "priceARS": "24000",
         "features": [
             "Taller intensivo de un día",
             "Podes traer tu material o usar el del vivero",
@@ -68,7 +68,7 @@
         "name": "Trabajos particulares de colección",
         "category": "in person",
         "priceUSD": "Desde 50",
-        "priceARS": "Desde 30000",
+        "priceARS": "Desde 40000",
         "features": [
             "Mantenimientos",
             "Diseños",
