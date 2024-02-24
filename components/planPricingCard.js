@@ -9,7 +9,6 @@ export function PlanCard({ plan }) {
       <Card.Body>
         <Card.Title>{plan.pack}</Card.Title>
         {plan.priceUSD && <p>Precio en USD: {plan.priceUSD}</p>}
-        {plan.priceARS && <p>Precio en Pesos Argentinos: {plan.priceARS}</p>}
         {plan.category && <p>Tipo: {plan.category === "in person"? "Presenciales": "Virtuales"}</p>}
         <ul>
           {plan.features.map(feature => (
