@@ -10,6 +10,7 @@ export default function Classes() {
   return (
     <Layout>
       <p>Estos son los formatos de talleres y clases que ofrecemos por el momento</p>
+      <p>Para gente en Argentina: tomamos la cotizacion 'Blue' del dolar, el mismo se puede encontrar <a href="https://www.dolarito.ar/" target="_blank">aqui</a> </p>
       <PlanSearchBar plans={pricingData} setFilteredPlans={setFilteredPlans} />
       <p></p>
       <PricingGrid plans={filteredPlans} />
