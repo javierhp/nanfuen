@@ -47,12 +47,16 @@ export default function About() {
           </div>
         </div>
         <div className="row align-items-center">
-          <p className="font-italic text-muted mb-4">
-            Luego la situación de pandemia nos llevó a trasladar tanto ventas como taller a formato online, ampliando también los productos que hoy podemos ofrecer.
-          </p>
+          <div className="col-lg-6 order-2 order-lg-1">
+            <div className="  d-flex">
+              <Image src="/images/Oyakata_primer_minister.jpg" className="rounded" width={250} height={350} />
+            </div>
+            <p className="font-italic text-muted mb-4">
+              La situación de pandemia nos llevó a trasladar tanto ventas como taller a formato online, ampliando también los productos que hoy podemos ofrecer.
+            </p>
+          </div>
         </div>
       </div>
-      <Image src="/images/Oyakata_primer_minister.jpg" className="rounded" width={600} height={800} />
     </Layout>
   );
 }
