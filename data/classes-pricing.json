@@ -55,8 +55,8 @@
     {
         "name": "Workshop",
         "category": "in person",
-        "priceUSD": "30",
-        "priceARS": "24000",
+        "priceUSD": "",
+        "priceARS": "",
         "features": [
             "Taller intensivo de un día",
             "Podes traer tu material o usar el del vivero",
