@@ -8,8 +8,8 @@ export default function CatalogByCategory() {
     return (
         <Layout>
             <h2>Sumaremos nuevos productos en el catalogo a medida se encuentren disponibles, esten atentos!</h2>
-            {category &&
-                <ProductGrid category={category}></ProductGrid>}
+            {/* {category &&
+                <ProductGrid category={category}></ProductGrid>} */}
         </Layout>
     );
 }

@@ -5,7 +5,7 @@ export default function Catalog() {
   return (
     <Layout>
       <h2>Sumaremos nuevos productos en el catalogo a medida se encuentren disponibles, esten atentos!</h2>
-      <ProductGrid></ProductGrid>
+      {/* <ProductGrid></ProductGrid> */}
     </Layout>
   );
 }
