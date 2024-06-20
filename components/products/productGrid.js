@@ -3,6 +3,7 @@ import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import FilterBar from './FilterBar';
 import ProductCard from './ProductCard';
 import productsData from '../../public/data/prodcuts.json';
+import HowToBuy from '../howToBuy';
 
 const ProductGrid = ({ category }) => {
     function sortBySelection(selection, products) {
@@ -91,6 +92,7 @@ const ProductGrid = ({ category }) => {
                     <Accordion.Header>Filtros</Accordion.Header>
                     <Accordion.Body>
                         <FilterBar filterState={filterState} onFilterChange={handleFilterChange} onResetFilters={handleResetFilters} />
+                        <HowToBuy></HowToBuy>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

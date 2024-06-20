@@ -1,5 +1,6 @@
 import Layout from "../../components/layout";
 import ProductGrid from "../../components/products/productGrid";
+import HowToBuy from "../../components/howToBuy";
 import { useRouter } from 'next/router';
 
 export default function CatalogByCategory() {
@@ -7,9 +8,9 @@ export default function CatalogByCategory() {
     const { category } = router.query;
     return (
         <Layout>
-            <h2>Sumaremos nuevos productos en el catalogo a medida se encuentren disponibles, esten atentos!</h2>
-            {/* {category &&
-                <ProductGrid category={category}></ProductGrid>} */}
+            {/* <h2>Sumaremos nuevos productos en el catalogo a medida se encuentren disponibles, esten atentos!</h2> */}
+            {category &&
+                <ProductGrid category={category}></ProductGrid>}
         </Layout>
     );
 }
