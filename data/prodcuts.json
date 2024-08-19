@@ -457,7 +457,7 @@
         "priceARS": "128115.00000000001",
         "img": "",
         "priceUSD": "200",
-        "available": "YES",
+        "available": "NO",
         "name": "Itoigawa 23",
         "code": "IT023",
         "hasImage": "YES"
@@ -535,7 +535,7 @@
         "priceARS": "704632.5",
         "img": "",
         "priceUSD": "1100",
-        "available": "YES",
+        "available": "NO",
         "name": "Pino negro 29",
         "code": "PN029",
         "hasImage": "YES"
