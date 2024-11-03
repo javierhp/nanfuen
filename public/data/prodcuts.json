@@ -7,11 +7,9 @@
         "potSize": "15.5x13x4",
         "color": "Sin esmaltar",
         "author": "Shibakatsu",
-        "hasImage": "NO",
         "available": "NO",
-        "priceARS": "10477.611940298508",
-        "Precio yenes": "4000",
-        "Full album": "https://photos.app.goo.gl/cttru8UfrDMGF2Wt9"
+        "priceUSD": "26.845637583892618",
+        "Precio yenes": "4000"
     },
     {
         "type": "Pot",
@@ -21,11 +19,9 @@
         "potSize": "9.5x5",
         "color": "Rosa",
         "author": "Japon, sello a conf",
-        "hasImage": "https://photos.app.goo.gl/i3Q4nRjAqspnVCRs5",
-        "available": "YES",
-        "priceARS": "18335.82089552239",
-        "Precio yenes": "7000",
-        "Full album": ""
+        "available": "NO",
+        "priceUSD": "46.97986577181208",
+        "Precio yenes": "7000"
     },
     {
         "type": "Pot",
@@ -35,11 +31,9 @@
         "potSize": "10x8.5x3",
         "color": "Rosa y celeste",
         "author": "Eimei",
-        "hasImage": "NO",
         "available": "NO",
-        "priceARS": "18335.82089552239",
-        "Precio yenes": "7000",
-        "Full album": ""
+        "priceUSD": "46.97986577181208",
+        "Precio yenes": "7000"
     },
     {
         "type": "Pot",
@@ -49,11 +43,9 @@
         "potSize": "10x4",
         "color": "Sin esmaltar",
         "author": "China",
-        "hasImage": "https://photos.app.goo.gl/QazLvxguDSbd4rY4A",
         "available": "NO",
-        "priceARS": "5238.805970149254",
-        "Precio yenes": "2000",
-        "Full album": ""
+        "priceUSD": "13.422818791946309",
+        "Precio yenes": "2000"
     },
     {
         "type": "Pot",
@@ -63,11 +55,9 @@
         "potSize": "17x9",
         "color": "Sin esmaltar",
         "author": "China",
-        "hasImage": "https://photos.app.goo.gl/TLtho3ZyiEwYLFSv8",
         "available": "NO",
-        "priceARS": "7858.20895522388",
-        "Precio yenes": "3000",
-        "Full album": ""
+        "priceUSD": "20.13422818791946",
+        "Precio yenes": "3000"
     },
     {
         "type": "Pot",
@@ -77,11 +67,9 @@
         "potSize": "11x5.5",
         "color": "Salmon",
         "author": "Japon, sello a conf",
-        "hasImage": "https://photos.app.goo.gl/oBtHTF87rrPdkYEMA",
         "available": "YES",
-        "priceARS": "18335.82089552239",
-        "Precio yenes": "7000",
-        "Full album": ""
+        "priceUSD": "46.97986577181208",
+        "Precio yenes": "7000"
     },
     {
         "type": "Pot",
@@ -91,11 +79,9 @@
         "potSize": "6x3.5",
         "color": "Blanca",
         "author": "Japon, sello a conf",
-        "hasImage": "https://photos.app.goo.gl/JMAMjtbHX1QTwKiF7",
         "available": "YES",
-        "priceARS": "3929.10447761194",
-        "Precio yenes": "1500",
-        "Full album": "1500"
+        "priceUSD": "10.06711409395973",
+        "Precio yenes": "1500"
     },
     {
         "type": "Pot",
@@ -105,11 +91,9 @@
         "potSize": "13x6",
         "color": "Verde",
         "author": "Koyo",
-        "hasImage": "https://photos.app.goo.gl/RbjdtGNcjDLtbBkX8",
         "available": "NO",
-        "priceARS": "23574.626865671642",
-        "Precio yenes": "9000",
-        "Full album": ""
+        "priceUSD": "60.40268456375839",
+        "Precio yenes": "9000"
     },
     {
         "type": "Pot",
@@ -119,11 +103,9 @@
         "potSize": "13x7",
         "color": "Sin esmaltar",
         "author": "China",
-        "hasImage": "https://photos.app.goo.gl/cb9nbNS1GdkkVWFx9",
         "available": "NO",
-        "priceARS": "7858.20895522388",
-        "Precio yenes": "3000",
-        "Full album": ""
+        "priceUSD": "20.13422818791946",
+        "Precio yenes": "3000"
     },
     {
         "type": "Pot",
@@ -133,11 +115,9 @@
         "potSize": "16.5x12x3.5",
         "color": "Sin esmaltar",
         "author": "Mino Kenzan",
-        "hasImage": "NO",
         "available": "NO",
-        "priceARS": "26194.02985074627",
-        "Precio yenes": "10000",
-        "Full album": ""
+        "priceUSD": "67.11409395973155",
+        "Precio yenes": "10000"
     },
     {
         "type": "Pot",
@@ -147,11 +127,9 @@
         "potSize": "18.5x14.5x4.5",
         "color": "Azul",
         "author": "Japon, sello a conf",
-        "hasImage": "NO",
         "available": "NO",
-        "priceARS": "20955.223880597016",
-        "Precio yenes": "8000",
-        "Full album": ""
+        "priceUSD": "53.691275167785236",
+        "Precio yenes": "8000"
     },
     {
         "type": "Pot",
@@ -161,11 +139,9 @@
         "potSize": "9x3",
         "color": "Amarilla",
         "author": "Tokoname",
-        "hasImage": "https://photos.app.goo.gl/jeWFT5JDSB3uZtzo8",
         "available": "NO",
-        "priceARS": "6548.507462686567",
-        "Precio yenes": "2500",
-        "Full album": ""
+        "priceUSD": "16.778523489932887",
+        "Precio yenes": "2500"
     },
     {
         "type": "Pot",
@@ -175,11 +151,9 @@
         "potSize": "10x8.5x3.5",
         "color": "Sin esmaltar",
         "author": "China",
-        "hasImage": "https://photos.app.goo.gl/DN8GWTTik5fpSfK2A",
         "available": "NO",
-        "priceARS": "2619.402985074627",
-        "Precio yenes": "1000",
-        "Full album": ""
+        "priceUSD": "6.7114093959731544",
+        "Precio yenes": "1000"
     },
     {
         "type": "Pot",
@@ -189,11 +163,9 @@
         "potSize": "13x3.5",
         "color": "Blanca pintada",
         "author": "China",
-        "hasImage": "NO",
         "available": "NO",
-        "priceARS": "5238.805970149254",
-        "Precio yenes": "2000",
-        "Full album": ""
+        "priceUSD": "13.422818791946309",
+        "Precio yenes": "2000"
     },
     {
         "type": "Pot",
@@ -203,11 +175,9 @@
         "potSize": "15x11x6",
         "color": "Blanca",
         "author": "Tokoname",
-        "hasImage": "https://photos.app.goo.gl/3wF8Z6LDWwbYyJZD8",
         "available": "NO",
-        "priceARS": "7858.20895522388",
-        "Precio yenes": "3000",
-        "Full album": ""
+        "priceUSD": "20.13422818791946",
+        "Precio yenes": "3000"
     },
     {
         "type": "Pot",
@@ -217,11 +187,9 @@
         "potSize": "7.5x2.5",
         "color": "Sin esmaltar",
         "author": "China",
-        "hasImage": "https://photos.app.goo.gl/1D2nveWksDg67UAQ6",
         "available": "NO",
-        "priceARS": "5238.805970149254",
-        "Precio yenes": "2000",
-        "Full album": ""
+        "priceUSD": "13.422818791946309",
+        "Precio yenes": "2000"
     },
     {
         "type": "Pot",
@@ -231,11 +199,9 @@
         "potSize": "9x3",
         "color": "Celeste",
         "author": "Tokoname",
-        "hasImage": "https://photos.app.goo.gl/KUm5Q7VbCM3vnMPHA",
         "available": "YES",
-        "priceARS": "6548.507462686567",
-        "Precio yenes": "2500",
-        "Full album": ""
+        "priceUSD": "16.778523489932887",
+        "Precio yenes": "2500"
     },
     {
         "type": "Pot",
@@ -245,11 +211,9 @@
         "potSize": "7x5.5x3.5",
         "color": "Celeste",
         "author": "Argentina",
-        "hasImage": "https://photos.app.goo.gl/K9D7uQi4iTiu2SkX7",
         "available": "YES",
-        "priceARS": "2095.5223880597014",
-        "Precio yenes": "800",
-        "Full album": ""
+        "priceUSD": "5.369127516778524",
+        "Precio yenes": "800"
     },
     {
         "type": "Pot",
@@ -259,11 +223,9 @@
         "potSize": "7x4",
         "color": "Rosa",
         "author": "Argentina",
-        "hasImage": "https://photos.app.goo.gl/NMb1J71hPwqU7cvg8",
         "available": "YES",
-        "priceARS": "2095.5223880597014",
-        "Precio yenes": "800",
-        "Full album": ""
+        "priceUSD": "5.369127516778524",
+        "Precio yenes": "800"
     },
     {
         "type": "Pot",
@@ -273,11 +235,9 @@
         "potSize": "17.5x12.5x5",
         "color": "Celeste",
         "author": "Caja de Fuego",
-        "hasImage": "",
         "available": "YES",
-        "priceARS": "7858.20895522388",
-        "Precio yenes": "3000",
-        "Full album": ""
+        "priceUSD": "20.13422818791946",
+        "Precio yenes": "3000"
     },
     {
         "type": "Pot",
@@ -287,11 +247,9 @@
         "potSize": "19x15.5x5.2",
         "color": "Sin esmaltar",
         "author": "Caja de Fuego",
-        "hasImage": "",
         "available": "NO",
-        "priceARS": "6548.507462686567",
-        "Precio yenes": "2500",
-        "Full album": ""
+        "priceUSD": "16.778523489932887",
+        "Precio yenes": "2500"
     },
     {
         "type": "Pot",
@@ -301,11 +259,9 @@
         "potSize": "18x14x4.7",
         "color": "Azul",
         "author": "Caja de Fuego",
-        "hasImage": "",
         "available": "YES",
-        "priceARS": "7858.20895522388",
-        "Precio yenes": "3000",
-        "Full album": ""
+        "priceUSD": "20.13422818791946",
+        "Precio yenes": "3000"
     },
     {
         "type": "Pot",
@@ -315,11 +271,9 @@
         "potSize": "17x14x4.7",
         "color": "Ceniza",
         "author": "Caja de Fuego",
-        "hasImage": "",
         "available": "YES",
-        "priceARS": "8382.089552238805",
-        "Precio yenes": "3200",
-        "Full album": ""
+        "priceUSD": "21.476510067114095",
+        "Precio yenes": "3200"
     },
     {
         "type": "Pot",
@@ -329,11 +283,9 @@
         "potSize": "15.5x14.5x4",
         "color": "Ceniza",
         "author": "Caja de Fuego",
-        "hasImage": "",
         "available": "YES",
-        "priceARS": "11787.313432835821",
-        "Precio yenes": "4500",
-        "Full album": ""
+        "priceUSD": "30.201342281879196",
+        "Precio yenes": "4500"
     },
     {
         "type": "Tools",
