@@ -22,9 +22,15 @@ export function PlanCard({ plan }) {
           </Button>
         }
         {
-          plan.category === "in person" && 
+          plan.name === "Workshop" && 
           <Button variant="primary" disabled={!plan.enabled}>
             {plan.enabled ? 'Escribinos por mail' : 'No disponible'}
+          </Button>
+        }
+        {
+          plan.name === "Talleres presenciales" && 
+          <Button variant="primary" disabled={!plan.enabled} href='https://forms.gle/HTX91yHzCr4Ab2q16'>
+            {plan.enabled ? 'Inscribirse' : 'No disponible'}
           </Button>
         }
       </Card.Body>
