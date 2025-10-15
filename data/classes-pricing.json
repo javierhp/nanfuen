@@ -43,7 +43,7 @@
     {
         "name": "Talleres presenciales",
         "category": "in person",
-        "priceUSD": "25",
+        "priceUSD": "35",
         "priceARS": "",
         "features": [
             "2hs de duracion",
@@ -57,7 +57,7 @@
     {
         "name": "Workshop",
         "category": "in person",
-        "priceUSD": "50",
+        "priceUSD": "70",
         "priceARS": "",
         "features": [
             "Taller intensivo de un día",

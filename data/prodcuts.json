@@ -411,7 +411,7 @@
         "tree_height": "70",
         "nebari": "8.5",
         "priceUSD": "250",
-        "available": "NO",
+        "available": "YES",
         "name": "Pino negro 32",
         "code": "PN32"
     },
@@ -422,7 +422,7 @@
         "tree_height": "34",
         "nebari": "8",
         "priceUSD": "190",
-        "available": "NO",
+        "available": "YES",
         "name": "Pino negro 33",
         "code": "PN33"
     },
@@ -433,7 +433,7 @@
         "tree_height": "60",
         "nebari": "5",
         "priceUSD": "150",
-        "available": "NO",
+        "available": "YES",
         "name": "Pino negro 34",
         "code": "PN34"
     }
