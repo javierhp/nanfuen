@@ -9,7 +9,13 @@ export default function Menu() {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="#home">
-        <Image src="/images/logo-iso.svg" className="rounded" alt="Nanfuen" width={60} height={45} />
+        <Image
+          src="/images/logo-iso.svg"
+          className="rounded"
+          alt="Nanfuen"
+          width={60}
+          height={45}
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -65,5 +71,5 @@ export default function Menu() {
     //           Separated link
     //         </NavDropdown.Item>
     //       </NavDropdown>
-  )
+  );
 }

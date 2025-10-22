@@ -1,5 +1,5 @@
-import Layout from "../components/layout";
-import ProductGrid from "../components/products/productGrid";
+import Layout from '../components/layout';
+import ProductGrid from '../components/products/productGrid';
 
 export default function Catalog() {
   return (

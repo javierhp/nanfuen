@@ -1,13 +1,11 @@
 /**
  * @type {import('next').NextConfig}
  */
-const nextConfig = {
-
-}
+const nextConfig = {};
 
 module.exports = {
-    images: {
-        unoptimized: true,
-    },
-    trailingSlash: true
-}
+  images: {
+    unoptimized: true,
+  },
+  trailingSlash: true,
+};

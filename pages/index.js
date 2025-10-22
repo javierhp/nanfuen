@@ -1,11 +1,11 @@
-import Link from "next/link";
-import Layout from "../components/layout";
+import Link from 'next/link';
+import Layout from '../components/layout';
 import Image from 'next/image';
 
 export default function Home() {
   return (
     <Layout>
-      <div className='container'>
+      <div className="container">
         <main role="main" className="inner cover">
           <Image
             src="/images/Fulllogo1b.svg" // Route of the image file
@@ -19,20 +19,25 @@ export default function Home() {
           <p className="lead text-center">Ideado en Japon, con raices argentinas</p>
 
           <p className="lead text-center">
-            <a href="https://www.facebook.com/NanfuenBonsai" target="_blank" className="btn">
+            <a href="https://www.facebook.com/NanfuenBonsai" target="_blank" className="btn" rel="noreferrer">
               <img src="/images/fb_logo.png" width="20em" />
               Visitanos en Facebook
             </a>
-            <a href="https://www.instagram.com/nan.fu.en" target="_blank" className="btn">
+            <a href="https://www.instagram.com/nan.fu.en" target="_blank" className="btn" rel="noreferrer">
               <img src="/images/in_logo.png" width="25em" />
               Seguinos en Instagram
             </a>
-            <a href="https://www.youtube.com/channel/UCe56m0m-lP51rcDG-O1sjpg" target="_blank" className="btn">
+            <a
+              href="https://www.youtube.com/channel/UCe56m0m-lP51rcDG-O1sjpg"
+              target="_blank"
+              className="btn" rel="noreferrer"
+            >
               <img src="/images/yt_logo.png" width="25em" />
               Miranos en Youtube
             </a>
           </p>
-          <p className="lead text-center">Pasion por los shohin! Queres saber mas?
+          <p className="lead text-center">
+            Pasion por los shohin! Queres saber mas?
             <Link href="/shohin">Hace click aca</Link>
           </p>
         </main>
@@ -49,5 +54,5 @@ export default function Home() {
         </footer> */}
       </div>
     </Layout>
-  )
+  );
 }
