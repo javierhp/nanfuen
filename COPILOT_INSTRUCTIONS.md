@@ -8,6 +8,13 @@ This file gives a concise overview of the `nanfuen` project, the installed packa
 - Framework: Next.js (React) using plain JavaScript and Bootstrap for styling.
 - Repo layout highlights: pages, components, public, data, styles and a small scripts set in `package.json`.
 
+Status update (local)
+
+- ESLint + Prettier were added to the repository and devDependencies were installed.
+- Prettier was run and formatted the codebase. ESLint was run as a sanity check: final run reported ~101 problems (8 errors, 93 warnings) before ignoring generated files; most remaining issues are accessibility (missing image alts and unescaped apostrophes) and missing PropTypes. A `.eslintignore` was added to avoid linting build/output files.
+
+This file below includes recommended next steps and an incremental plan to address remaining items.
+
 ## Installed dependencies
 
 The project uses the following direct dependencies (from `package.json`):
@@ -47,9 +54,9 @@ There is also an `exportAndPublish.cmd` script in the repo root referenced in th
 
 Start small and establish quality tooling before large rewrites.
 
-1. Add linting and formatting
-   - Add ESLint + Prettier. Create a basic ESLint config tuned for Next.js and React.
-   - Add pre-commit hooks (husky + lint-staged) to run formatting/linting on changed files.
+1. Add linting and formatting — Completed
+   - ESLint + Prettier were added and run locally. Configuration files (`.eslintrc.js`, `.prettierrc`, `.prettierignore`, `.eslintignore`) and lint/format npm scripts are present.
+   - Consider adding pre-commit hooks (husky + lint-staged) to enforce formatting/linting on changed files.
 
 2. Add type safety (optional, iterative)
    - Consider migrating to TypeScript gradually. Start by adding TS config and enabling `allowJs` + `checkJs` for a transitional period.
@@ -83,8 +90,7 @@ Start small and establish quality tooling before large rewrites.
    - When accepting UI changes from Copilot, request small diffs with preview instructions (what to look for visually and accessibility checks).
 
 ## Low-risk first PRs (good starter tasks)
-
-- Add ESLint and Prettier configuration and a README note describing the rules.
+- Add Husky + lint-staged to enforce formatting/linting on commit.
 - Pin `next` to a specific version and run the app to confirm nothing breaks.
 - Add a lockfile by running `npm install` and committing `package-lock.json`.
 - Move duplicated utility code into a `utils/` file and add a unit test.
@@ -108,7 +114,7 @@ npm run export
 
 ## Next steps I can take for you
 
-- Add ESLint + Prettier config and a basic `.eslintrc.js` tuned for Next.js.
+- Set up Husky + lint-staged to run Prettier/ESLint on pre-commit.
 - Create a `package-lock.json` by running `npm install` and commit it.
 - Pin `next` to a specific version and run the dev server to validate.
 
