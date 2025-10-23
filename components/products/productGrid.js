@@ -108,15 +108,13 @@ const ProductGrid = ({ category }) => {
         </Accordion.Item>
       </Accordion>
       <Row>
-        {filteredProducts.map((product) => (
-          <>
-            {product.hasImage !== 'NO' && (
-              <Col key={product.code} xs={12} md={6}>
-                <ProductCard product={product} />
-              </Col>
-            )}
-          </>
-        ))}
+        {filteredProducts
+          .filter(product => product.hasImage !== 'NO')
+          .map((product) => (
+            <Col key={product.code} xs={12} md={6}>
+              <ProductCard product={product} />
+            </Col>
+          ))}
       </Row>
     </Container>
   );

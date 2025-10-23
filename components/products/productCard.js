@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   const [sold, setSold] = useState(product.available === 'NO');
 
   return (
-    <Card className={`product-card ${sold ? 'sold' : ''}`}>
+    <Card className={`product-card ${sold ? 'sold' : ''}`} role="article">
       <div className="product-image">
         <Card.Img
           variant="top"
