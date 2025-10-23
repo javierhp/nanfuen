@@ -71,19 +71,16 @@ Start small and establish quality tooling before large rewrites.
    - Group related components into subfolders with index files
    - Extract utility functions into a `lib/` or `utils/` folder and add unit tests.
 
-5. Tests
-   - Add a small test harness (Jest + React Testing Library) and create smoke tests for pages/components.
-
-6. Accessibility & performance
+5. Accessibility & performance
    - Run Lighthouse audits, fix common issues (images, meta tags, semantic HTML).
 
-7. Iterative package updates and compatibility
+6. Iterative package updates and compatibility
    - Perform dependency upgrades in small batches (one major dependency or related group per PR).
    - For each upgrade: run the app, run any linters/tests, and refactor code for breaking API changes.
    - Prefer feature branches named like `deps/next-14` or `deps/react-18` and create small PRs with clear change logs.
    - Use `npm outdated` and `npm audit` to prioritize updates. For packages with native CSS/JS API changes (for example `react-bootstrap` or `next`), consult changelogs first.
 
-8. Revamp page design (modernize UI)
+7. Revamp page design (modernize UI)
    - Approach this incrementally: pick one page (for example `pages/index.js`) and propose a modern redesign as a single PR.
    - Suggestions Copilot can provide: updated layout with CSS Grid/Flexbox, simplified header/navigation, accessible color palette, new typography scale (use system fonts or add Google Fonts), consistent card/grid components for products, and improved spacing.
    - Keep a feature-flagged approach if you want to deploy incrementally (e.g., a CSS module switch or a `revamp` query param). This reduces risk and lets you A/B test.
