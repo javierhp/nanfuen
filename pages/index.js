@@ -19,18 +19,29 @@ export default function Home() {
           <p className="lead text-center">Ideado en Japon, con raices argentinas</p>
 
           <p className="lead text-center">
-            <a href="https://www.facebook.com/NanfuenBonsai" target="_blank" className="btn" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/NanfuenBonsai"
+              target="_blank"
+              className="btn"
+              rel="noreferrer"
+            >
               <img src="/images/fb_logo.png" width="20em" />
               Visitanos en Facebook
             </a>
-            <a href="https://www.instagram.com/nan.fu.en" target="_blank" className="btn" rel="noreferrer">
+            <a
+              href="https://www.instagram.com/nan.fu.en"
+              target="_blank"
+              className="btn"
+              rel="noreferrer"
+            >
               <img src="/images/in_logo.png" width="25em" />
               Seguinos en Instagram
             </a>
             <a
               href="https://www.youtube.com/channel/UCe56m0m-lP51rcDG-O1sjpg"
               target="_blank"
-              className="btn" rel="noreferrer"
+              className="btn"
+              rel="noreferrer"
             >
               <img src="/images/yt_logo.png" width="25em" />
               Miranos en Youtube
