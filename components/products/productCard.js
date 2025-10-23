@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
 import { Card, Badge } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import PotDetails from './PotDetails';
 import TreeDetails from './treeDetails';
 import ToolDetails from './toolDetails';
@@ -46,6 +47,17 @@ const ProductCard = ({ product }) => {
       </Card.Body>
     </Card>
   );
+};
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    available: PropTypes.oneOf(['YES', 'NO']).isRequired,
+    hasImage: PropTypes.oneOf(['YES', 'NO']),
+    code: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    priceUSD: PropTypes.number,
+    type: PropTypes.oneOf(['Pot', 'tree', 'tools']).isRequired
+  }).isRequired
 };
 
 export default ProductCard;

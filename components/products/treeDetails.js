@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function TreeDetails({ product }) {
   return (
@@ -12,5 +13,12 @@ function TreeDetails({ product }) {
     </ul>
   );
 }
+
+TreeDetails.propTypes = {
+  product: PropTypes.shape({
+    tree_width: PropTypes.string.isRequired,
+    tree_height: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default TreeDetails;

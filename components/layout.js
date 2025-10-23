@@ -1,15 +1,12 @@
 import Menu from './menu';
-import styles from './layout.module.css';
 import Head from 'next/head';
-import Image from 'next/image';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
+import PropTypes from 'prop-types';
 
 const name = 'Nanfuen';
 export const siteTitle = 'Nanfuen Sample Website';
 
-export default function Layout({ children }) {
+function Layout({ children }) {
   return (
     <Container>
       <Head>
@@ -33,3 +30,9 @@ export default function Layout({ children }) {
     </Container>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
+export default Layout;

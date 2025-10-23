@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 import FilterBar from './FilterBar';
 import ProductCard from './ProductCard';
@@ -118,6 +119,10 @@ const ProductGrid = ({ category }) => {
       </Row>
     </Container>
   );
+};
+
+ProductGrid.propTypes = {
+  category: PropTypes.oneOf(['Pot', 'tree', 'tools'])
 };
 
 export default ProductGrid;

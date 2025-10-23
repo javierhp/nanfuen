@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 function HowToBuy({ product }) {
   return (
@@ -14,5 +15,12 @@ function HowToBuy({ product }) {
     </Row>
   );
 }
+
+HowToBuy.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string,
+    price: PropTypes.number
+  })
+};
 
 export default HowToBuy;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function PotDetails({ product }) {
   return (
@@ -18,5 +19,14 @@ function PotDetails({ product }) {
     </ul>
   );
 }
+
+PotDetails.propTypes = {
+  product: PropTypes.shape({
+    potShape: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    potSize: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default PotDetails;

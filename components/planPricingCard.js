@@ -1,4 +1,5 @@
 import { Card, Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 export function PlanCard({ plan }) {
   const { name, description, priceInUSD, priceInARS, category, pack, enabled } = plan;
@@ -47,3 +48,17 @@ export function PlanCard({ plan }) {
     </Card>
   );
 }
+
+PlanCard.propTypes = {
+  plan: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    priceInUSD: PropTypes.number,
+    priceInARS: PropTypes.number,
+    category: PropTypes.oneOf(['in person', 'virtual']),
+    pack: PropTypes.string,
+    enabled: PropTypes.bool,
+    features: PropTypes.arrayOf(PropTypes.string),
+    priceUSD: PropTypes.number
+  }).isRequired
+};

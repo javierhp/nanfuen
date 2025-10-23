@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
   const [filters, setFilters] = useState(filterState);
@@ -100,6 +101,18 @@ const FilterBar = ({ onFilterChange, onResetFilters, filterState }) => {
       </Row>
     </Form>
   );
+};
+
+FilterBar.propTypes = {
+  onFilterChange: PropTypes.func.isRequired,
+  onResetFilters: PropTypes.func.isRequired,
+  filterState: PropTypes.shape({
+    type: PropTypes.string,
+    available: PropTypes.string,
+    sortBy: PropTypes.string,
+    minPrice: PropTypes.number,
+    maxPrice: PropTypes.number
+  }).isRequired
 };
 
 export default FilterBar;

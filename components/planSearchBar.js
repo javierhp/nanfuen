@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const PlanSearchBar = ({ plans, setFilteredPlans }) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -38,6 +39,16 @@ const PlanSearchBar = ({ plans, setFilteredPlans }) => {
       </Form.Group>
     </Form>
   );
+};
+
+PlanSearchBar.propTypes = {
+  plans: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string.isRequired,
+      price: PropTypes.number
+    })
+  ).isRequired,
+  setFilteredPlans: PropTypes.func.isRequired
 };
 
 export default PlanSearchBar;

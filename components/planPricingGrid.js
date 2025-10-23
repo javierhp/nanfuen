@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { PlanCard } from './planPricingCard';
+import PropTypes from 'prop-types';
 
 export default function PricingGrid({ plans }) {
   return (
@@ -14,3 +15,19 @@ export default function PricingGrid({ plans }) {
     </Container>
   );
 }
+
+PricingGrid.propTypes = {
+  plans: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      priceInUSD: PropTypes.number,
+      priceInARS: PropTypes.number,
+      category: PropTypes.string,
+      pack: PropTypes.string,
+      enabled: PropTypes.bool,
+      features: PropTypes.arrayOf(PropTypes.string)
+    })
+  ).isRequired
+};
