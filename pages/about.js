@@ -121,7 +121,7 @@ export default function About() {
                 <br />
                 [EN] In 2018 we started workshops in Tucuman and continued with those in Cordoba,
                 and we also held the first workshop at home (Buenos Aires). By October we were back
-                in Japan, where I had the honor of visiting Kimura-san's garden as well as Shunkaen
+                in Japan, where I had the honor of visiting Kimura-san&#39;s garden as well as Shunkaen
                 (by Kobayashi-san), and there was even time to go to the Shuga-ten (the second
                 largest Shohin bonsai exhibition in Japan).
               </p>

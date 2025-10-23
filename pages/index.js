@@ -25,7 +25,7 @@ export default function Home() {
               className="btn"
               rel="noreferrer"
             >
-              <img src="/images/fb_logo.png" width="20em" />
+              <img src="/images/fb_logo.png" width="20em" alt="Facebook logo" />
               Visitanos en Facebook
             </a>
             <a
@@ -34,7 +34,7 @@ export default function Home() {
               className="btn"
               rel="noreferrer"
             >
-              <img src="/images/in_logo.png" width="25em" />
+              <img src="/images/in_logo.png" width="25em" alt="Instagram logo" />
               Seguinos en Instagram
             </a>
             <a
@@ -43,7 +43,7 @@ export default function Home() {
               className="btn"
               rel="noreferrer"
             >
-              <img src="/images/yt_logo.png" width="25em" />
+              <img src="/images/yt_logo.png" width="25em" alt="YouTube logo" />
               Miranos en Youtube
             </a>
           </p>

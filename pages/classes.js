@@ -11,7 +11,7 @@ export default function Classes() {
     <Layout>
       <p>Estos son los formatos de talleres y clases que ofrecemos por el momento</p>
       <p>
-        Para gente en Argentina: tomamos la cotizacion 'Blue' del dolar, el mismo se puede encontrar{' '}
+  Para gente en Argentina: tomamos la cotizacion &#39;Blue&#39; del dolar, el mismo se puede encontrar{' '}
         <a href="https://www.dolarito.ar/" target="_blank" rel="noreferrer">
           aqui
         </a>{' '}
