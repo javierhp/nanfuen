@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export",
+    "export": "next build",
     "lint": "eslint . --ext .js,.jsx --max-warnings=0",
     "format": "prettier --write \"**/*.{js,jsx,css,md,json}\"",
     "test": "jest",
@@ -17,7 +17,8 @@
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-bootstrap": "^2.9.1",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sharp": "^0.34.4"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.28.3",
