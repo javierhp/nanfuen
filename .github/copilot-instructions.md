@@ -54,18 +54,9 @@ There is also an `exportAndPublish.cmd` script in the repo root referenced in th
 
 Start small and establish quality tooling before large rewrites.
 
-1. Add linting and formatting — Completed
-   - ESLint + Prettier were added and run locally. Configuration files (`.eslintrc.js`, `.prettierrc`, `.prettierignore`, `.eslintignore`) and lint/format npm scripts are present.
-   - Consider adding pre-commit hooks (husky + lint-staged) to enforce formatting/linting on changed files.
-
 2. Add type safety (optional, iterative)
    - Consider migrating to TypeScript gradually. Start by adding TS config and enabling `allowJs` + `checkJs` for a transitional period.
    - Convert small components/pages to `.tsx` one at a time.
-
-3. Dependency hygiene
-   - Replace `next: "latest"` with a specific supported version (for example `^14.0.0` or whatever is current and compatible).
-   - Add a lockfile (`package-lock.json`) and commit it.
-   - Run `npm audit` and address high/critical issues.
 
 4. Improve folder structure (if needed)
    - Group related components into subfolders with index files
@@ -73,12 +64,6 @@ Start small and establish quality tooling before large rewrites.
 
 5. Accessibility & performance
    - Run Lighthouse audits, fix common issues (images, meta tags, semantic HTML).
-
-6. Iterative package updates and compatibility
-   - Perform dependency upgrades in small batches (one major dependency or related group per PR).
-   - For each upgrade: run the app, run any linters/tests, and refactor code for breaking API changes.
-   - Prefer feature branches named like `deps/next-14` or `deps/react-18` and create small PRs with clear change logs.
-   - Use `npm outdated` and `npm audit` to prioritize updates. For packages with native CSS/JS API changes (for example `react-bootstrap` or `next`), consult changelogs first.
 
 7. Revamp page design (modernize UI)
    - Approach this incrementally: pick one page (for example `pages/index.js`) and propose a modern redesign as a single PR.

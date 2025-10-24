@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Row, Col, Accordion, Card } from 'react-bootstrap';
+import { Container, Row, Col, Accordion } from 'react-bootstrap';
 import FilterBar from './FilterBar';
-import ProductCard from './ProductCard';
+import ProductList from './productList';
+import styles from './productGrid.module.css';
+import ProductCard from './productCard';
+import ProductCardSkeleton from './ProductCardSkeleton';
 import productsData from '../../public/data/prodcuts.json';
 import HowToBuy from '../howToBuy';
 
@@ -93,30 +96,80 @@ const ProductGrid = ({ category }) => {
     handleFilterChange(defaultFilters);
   };
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time for demonstration
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [filterState]);
+
   return (
     <Container>
-      <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
+      <Accordion defaultActiveKey="0" style={{ marginBottom: 'var(--space-6)' }}>
+        <Accordion.Item 
+          eventKey="0"
+          style={{
+            border: '1px solid var(--color-border)',
+            borderRadius: '12px',
+            overflow: 'hidden'
+          }}
+        >
           <Accordion.Header>Filtros</Accordion.Header>
-          <Accordion.Body>
+          <Accordion.Body style={{ backgroundColor: 'var(--color-surface)' }}>
             <FilterBar
               filterState={filterState}
               onFilterChange={handleFilterChange}
               onResetFilters={handleResetFilters}
             />
-            <HowToBuy></HowToBuy>
+            <HowToBuy />
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <Row>
-        {filteredProducts
-          .filter(product => product.hasImage !== 'NO')
-          .map((product) => (
-            <Col key={product.code} xs={12} md={6}>
-              <ProductCard product={product} />
+
+      <Row 
+        xs={1} 
+        md={2} 
+        lg={3} 
+        style={{ 
+          gap: 'var(--space-6)',
+          marginBottom: 'var(--space-8)'
+        }}
+      >
+        {isLoading ? (
+          // Show skeleton loading state
+          Array.from({ length: 6 }).map((_, index) => (
+            <Col key={`skeleton-${index}`}>
+              <ProductCardSkeleton />
             </Col>
-          ))}
+          ))
+        ) : (
+          // Show actual products
+          filteredProducts
+            .filter(product => product.hasImage !== 'NO')
+            .map((product) => (
+              <Col key={product.code}>
+                <ProductCard product={product} />
+              </Col>
+            ))
+        )}
       </Row>
+
+      {!isLoading && filteredProducts.length === 0 && (
+        <div 
+          style={{
+            textAlign: 'center',
+            padding: 'var(--space-8)',
+            color: 'var(--color-text-light)'
+          }}
+        >
+          No se encontraron productos que coincidan con los filtros seleccionados.
+        </div>
+      )}
     </Container>
   );
 };

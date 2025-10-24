@@ -1,11 +1,148 @@
+:root {
+  /* Base configuration */
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  /* Colors - Dark Theme */
+  --color-primary: #83A8FF;
+  --color-primary-light: #a3bfff;
+  --color-secondary: #83A8FF;
+  --color-text: #E0E0E0;
+  --color-text-light: #9E9E9E;
+  --color-background: #121212;
+  --color-surface: #1E1E1E;
+  --color-surface-light: #2D2D2D;
+  --color-button: #232C43;
+  --color-button-hover: #2d3754;
+
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 14, 22, 33;
+  --background-end-rgb: 32, 39, 55;
+
+  --accent-color: #83A8FF;
+  --gradient-primary: linear-gradient(to right, #1e2738 0%, #343c4f 100%);
+  --gradient-accent: linear-gradient(to right, #83A8FF 0%, #83A8FF 100%);
+  --gradient-surface: linear-gradient(135deg, #1E1E1E 0%, #2D2D2D 100%);
+  --gradient-hover: linear-gradient(135deg, #2D2D2D 0%, #383838 100%);
+  
+  /* Typography */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  
+  /* Breakpoints */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}
+
+/* Base styles */
+html,
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#__next {
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+/* Card and surface styling */
+.card {
+  background: var(--gradient-surface);
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  background: var(--gradient-primary);
+  border: none;
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-4);
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Accent elements */
+.accent-gradient {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Layout utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Product card styles */
 .product-card {
   position: relative;
   display: inline-block;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--color-surface);
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
 }
 
 .product-card .product-image {
   position: relative;
   z-index: 1;
+  width: 100%;
+  height: auto;
 }
 
 .product-card .sold-overlay {
@@ -15,13 +152,14 @@
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  color: var(--color-primary);
 }
 
 .product-card.sold .product-image {

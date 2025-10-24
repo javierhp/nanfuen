@@ -5,64 +5,180 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <Layout>
-      <div className="container">
-        <main role="main" className="inner cover">
-          <Image
-            src="/images/Fulllogo1b.svg" // Route of the image file
-            height={200} // Desired size with correct aspect ratio
-            width={320} // Desired size with correct aspect ratio
-            alt="Nanfuen"
-            className="rounded col-md-12"
-          />
-          <h1 className="cover-heading text-center">Nanfuen Bonsai</h1>
+      <div className="container" style={{ backgroundColor: 'var(--color-background)' }}>
+        <main className="flex flex-col items-center" style={{ 
+          padding: 'var(--space-8) 0',
+          minHeight: '100vh',
+          backgroundColor: 'var(--color-background)'
+        }}>
+          <header className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
+            <div style={{ 
+              marginBottom: 'var(--space-8)',
+              position: 'relative'
+            }}>
+              <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '400px',
+                height: '400px',
+                background: 'radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, rgba(0, 0, 0, 0) 70%)',
+                borderRadius: '50%',
+                zIndex: 0
+              }} />
+              <Image
+                src="/images/Fulllogo1b.svg"
+                height={200}
+                width={320}
+                alt="Nanfuen Bonsai Logo"
+                priority
+                style={{ 
+                  maxWidth: '100%',
+                  height: 'auto',
+                  position: 'relative',
+                  zIndex: 1,
+                  filter: 'brightness(1.2)'
+                }}
+              />
+            </div>
+            <h1 style={{ 
+              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+              fontWeight: 'bold',
+              marginBottom: 'var(--space-4)',
+              textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+              color: '#83A8FF'
+            }}>
+              Nanfuen Bonsai
+            </h1>
+            <p style={{ 
+              fontSize: 'clamp(1.2rem, 3vw, 1.5rem)',
+              color: 'var(--color-text-light)',
+              marginBottom: 'var(--space-8)',
+              maxWidth: '600px'
+            }}>
+              Ideado en Japon, con raices argentinas
+            </p>
+          </header>
 
-          <p className="lead text-center">Ideado en Japon, con raices argentinas</p>
+          <section className="grid" style={{ 
+            gap: 'var(--space-6)',
+            maxWidth: '800px',
+            width: '100%',
+            marginBottom: 'var(--space-12)'
+          }}>
+            <div className="flex justify-between" style={{ 
+              gap: 'var(--space-4)',
+              flexWrap: 'wrap',
+              justifyContent: 'center'
+            }}>
+              {[
+                { href: "https://www.facebook.com/NanfuenBonsai", icon: "/images/fb_logo.png", label: "Facebook", size: 20 },
+                { href: "https://www.instagram.com/nan.fu.en", icon: "/images/in_logo.png", label: "Instagram", size: 25 },
+                { href: "https://www.youtube.com/channel/UCe56m0m-lP51rcDG-O1sjpg", icon: "/images/yt_logo.png", label: "YouTube", size: 25 }
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-link"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-2)',
+                    padding: 'var(--space-3) var(--space-4)',
+                    borderRadius: '12px',
+                    background: 'var(--color-surface)',
+                    color: 'var(--color-text)',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease-in-out',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.backgroundColor = 'var(--color-surface-light)';
+                    e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
+                    e.currentTarget.style.borderColor = 'var(--color-primary)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.backgroundColor = 'var(--color-surface)';
+                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  }}
+                >
+                  <Image src={social.icon} width={social.size} height={social.size} alt="" />
+                  <span>{social.label}</span>
+                </a>
+              ))}
+            </div>
+          </section>
 
-          <p className="lead text-center">
-            <a
-              href="https://www.facebook.com/NanfuenBonsai"
-              target="_blank"
-              className="btn"
-              rel="noreferrer"
-            >
-              <Image src="/images/fb_logo.png" width={20} height={20} alt="Facebook logo" />
-              Visitanos en Facebook
-            </a>
-            <a
-              href="https://www.instagram.com/nan.fu.en"
-              target="_blank"
-              className="btn"
-              rel="noreferrer"
-            >
-              <Image src="/images/in_logo.png" width={25} height={25} alt="Instagram logo" />
-              Seguinos en Instagram
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCe56m0m-lP51rcDG-O1sjpg"
-              target="_blank"
-              className="btn"
-              rel="noreferrer"
-            >
-              <Image src="/images/yt_logo.png" width={25} height={25} alt="YouTube logo" />
-              Miranos en Youtube
-            </a>
-          </p>
-          <p className="lead text-center">
-            Pasion por los shohin! Queres saber mas?
-            <Link href="/shohin">Hace click aca</Link>
-          </p>
+          <section style={{ 
+            padding: 'var(--space-8)',
+            backgroundColor: 'var(--color-surface)',
+            borderRadius: '24px',
+            maxWidth: '600px',
+            width: '100%',
+            position: 'relative',
+            overflow: 'hidden',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '2px',
+              background: '#83A8FF',
+              opacity: 0.3
+            }} />
+            <p style={{ 
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              marginBottom: 'var(--space-6)',
+              textAlign: 'center',
+              color: 'var(--color-text)',
+              textShadow: '0 2px 4px rgba(0,0,0,0.2)'
+            }}>
+              ¿Pasión por los shohin?
+            </p>
+            <div style={{ textAlign: 'center' }}>
+              <Link 
+                href="/shohin"
+                style={{
+                  display: 'inline-block',
+                  padding: 'var(--space-3) var(--space-8)',
+                  backgroundColor: '#232C43',
+                  color: '#FFFFFF',
+                  borderRadius: '12px',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease-in-out',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+                  border: '1px solid rgba(131, 168, 255, 0.2)',
+                  fontWeight: '500'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+                  e.currentTarget.style.backgroundColor = '#2d3754';
+                  e.currentTarget.style.borderColor = '#83A8FF';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+                  e.currentTarget.style.backgroundColor = '#232C43';
+                  e.currentTarget.style.borderColor = 'rgba(131, 168, 255, 0.2)';
+                }}
+              >
+                Descubre más
+              </Link>
+            </div>
+          </section>
         </main>
-
-        {/* <footer>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-          </a>
-        </footer> */}
       </div>
     </Layout>
   );

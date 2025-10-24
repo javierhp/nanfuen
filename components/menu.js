@@ -3,73 +3,112 @@ import Image from 'next/image';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import styles from './menu.module.css';
 
 export default function Menu() {
-  const products = [1, 2, 3];
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">
-        <Image
-          src="/images/logo-iso.svg"
-          className="rounded"
-          alt="Nanfuen"
-          width={60}
-          height={45}
+    <Navbar 
+      expand="lg" 
+      className={`py-3 ${styles.navbar}`}
+    >
+      <div className="container">
+        <Navbar.Brand 
+          href="/" 
+          style={{ 
+            padding: 'var(--space-2)',
+            position: 'relative'
+          }}
+        >
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '80px',
+            height: '80px',
+            background: 'radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, rgba(0, 0, 0, 0) 70%)',
+            borderRadius: '50%',
+            zIndex: 0
+          }} />
+          <Image
+            src="/images/logo-iso.svg"
+            alt="Nanfuen Bonsai Logo"
+            width={60}
+            height={45}
+            priority
+            style={{
+              position: 'relative',
+              zIndex: 1,
+              filter: 'brightness(1.2)'
+            }}
+          />
+        </Navbar.Brand>
+        
+        <Navbar.Toggle 
+          aria-controls="basic-navbar-nav"
+          style={{
+            border: 'none',
+            padding: 'var(--space-2)',
+            color: 'var(--color-text)',
+            '&:focus': {
+              boxShadow: 'none',
+              outline: '2px solid var(--color-primary)'
+            }
+          }} 
         />
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link href="/#home">Home</Nav.Link>
-          <Nav.Link href="/about">Acerca de nosotros / About us</Nav.Link>
-          <Nav.Link href="/shohin">Pasion por los shohin / Shohin passion</Nav.Link>
-          <Nav.Link href="/classes">Clases y Talleres</Nav.Link>
-          <NavDropdown title="Catalogo" id="basic-nav-dropdown">
-            <NavDropdown.Item href="/catalog">Todo</NavDropdown.Item>
-            <NavDropdown.Item href="/catalog/tree">Arboles</NavDropdown.Item>
-            <NavDropdown.Item href="/catalog/Pot">Macetas</NavDropdown.Item>
-            <NavDropdown.Item href="/catalog/Tools">Herramientas</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
+        
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav 
+            className="ms-auto"
+            style={{
+              gap: 'var(--space-4)',
+              '@media (max-width: 991px)': {
+                padding: 'var(--space-4) 0'
+              }
+            }}
+          >
+            {[
+              { href: "/", label: "Inicio" },
+              { href: "/about", label: "Acerca de nosotros" },
+              { href: "/shohin", label: "Shohin" },
+              { href: "/classes", label: "Clases y Talleres" }
+            ].map((link) => (
+              <Nav.Link 
+                key={link.href}
+                href={link.href}
+                className={`nav-link ${styles.navLink}`}
+              >
+                {link.label}
+              </Nav.Link>
+            ))}
+            
+            <NavDropdown 
+              title="Catálogo" 
+              id="basic-nav-dropdown"
+              style={{
+                color: 'var(--color-text)'
+              }}
+            >
+              <div className={styles.dropdownMenu}>
+                {[
+                  { href: "/catalog", label: "Todo" },
+                  { href: "/catalog/tree", label: "Árboles" },
+                  { href: "/catalog/Pot", label: "Macetas" },
+                  { href: "/catalog/Tools", label: "Herramientas" }
+                ].map((item) => (
+                  <NavDropdown.Item 
+                    key={item.href}
+                    href={item.href}
+                    className={styles.dropdownItem}
+                  >
+                    {item.label}
+                  </NavDropdown.Item>
+                ))}
+              </div>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </div>
     </Navbar>
-
-    // <ul>
-    //   <li>
-    //     <Link href="/">Inicio</Link>
-    //   </li>
-    //   <li>
-    //     <Link href="/about">Acerca de nosotros</Link>
-    //   </li>
-    //   <li>
-    //     <Link href="/classes">Clases y Talleres</Link>
-    //   </li>
-    //   <li>
-    //     <Link href="/catalog">Catalogo</Link>
-    //   </li>
-    //   {/* <li>
-    //     <ul>
-    //     {products.map((pid) => (
-    //         <li key={pid}>
-    //         <Link href={`/products/${encodeURIComponent(pid)}`}>
-    //             {pid}
-    //         </Link>
-    //         </li>
-    //     ))}
-    //     </ul>
-    //   </li> */}
-    // </ul>
-
-    // <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-    //         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-    //         <NavDropdown.Item href="#action/3.2">
-    //           Another action
-    //         </NavDropdown.Item>
-    //         <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-    //         <NavDropdown.Divider />
-    //         <NavDropdown.Item href="#action/3.4">
-    //           Separated link
-    //         </NavDropdown.Item>
-    //       </NavDropdown>
   );
 }
