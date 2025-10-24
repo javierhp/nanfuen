@@ -85,9 +85,7 @@ export default function Menu() {
             <NavDropdown 
               title="Catálogo" 
               id="basic-nav-dropdown"
-              style={{
-                color: 'var(--color-text)'
-              }}
+              className={styles.navDropdown}
             >
               <div className={styles.dropdownMenu}>
                 {[
