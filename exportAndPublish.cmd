@@ -12,7 +12,7 @@ FOR %%a IN ("%sourcedir%\*") DO IF /i NOT "%%~nxa"=="%keepfile%" IF /i NOT "%%~n
 
 ECHO "Export dev"
 
-CMD /C npm run export
+CMD /C npm run build
 
 ECHO "Copy to release dir"
 xcopy /s .\out %sourcedir% 
