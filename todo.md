@@ -1,3 +1,0 @@
-- Add new products
-- Filter by species
-- Theme

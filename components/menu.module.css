@@ -56,11 +56,11 @@
 }
 
 .navDropdown :global(.dropdown-menu) {
-  background: var(--color-surface);
-  border: 1px solid rgba(131, 168, 255, 0.1);
+  background: var(--gradient-surface);
+  border: none;
   border-radius: var(--border-radius);
   padding: var(--space-2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-hover);
 }
 
 .dropdownItem {

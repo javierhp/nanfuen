@@ -6,13 +6,13 @@ export default function Home() {
   return (
     <Layout>
       <div className="container" style={{ backgroundColor: 'var(--color-background)' }}>
-        <main className="flex flex-col items-center" style={{ 
+        <main className="flex flex-col items-center" style={{
           padding: 'var(--space-8) 0',
           minHeight: '100vh',
           backgroundColor: 'var(--color-background)'
         }}>
           <header className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
-            <div style={{ 
+            <div style={{
               marginBottom: 'var(--space-8)',
               position: 'relative'
             }}>
@@ -33,7 +33,7 @@ export default function Home() {
                 width={320}
                 alt="Nanfuen Bonsai Logo"
                 priority
-                style={{ 
+                style={{
                   maxWidth: '100%',
                   height: 'auto',
                   position: 'relative',
@@ -42,7 +42,7 @@ export default function Home() {
                 }}
               />
             </div>
-            <h1 style={{ 
+            <h1 style={{
               fontSize: 'clamp(2.5rem, 6vw, 4rem)',
               fontWeight: 'bold',
               marginBottom: 'var(--space-4)',
@@ -51,7 +51,7 @@ export default function Home() {
             }}>
               Nanfuen Bonsai
             </h1>
-            <p style={{ 
+            <p style={{
               fontSize: 'clamp(1.2rem, 3vw, 1.5rem)',
               color: 'var(--color-text-light)',
               marginBottom: 'var(--space-8)',
@@ -61,13 +61,13 @@ export default function Home() {
             </p>
           </header>
 
-          <section className="grid" style={{ 
+          <section className="grid" style={{
             gap: 'var(--space-6)',
             maxWidth: '800px',
             width: '100%',
             marginBottom: 'var(--space-12)'
           }}>
-            <div className="flex justify-between" style={{ 
+            <div className="flex justify-between" style={{
               gap: 'var(--space-4)',
               flexWrap: 'wrap',
               justifyContent: 'center'
@@ -93,20 +93,18 @@ export default function Home() {
                     color: 'var(--color-text)',
                     textDecoration: 'none',
                     transition: 'all 0.3s ease-in-out',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+                    boxShadow: 'var(--shadow-soft)',
                   }}
                   onMouseOver={(e) => {
                     e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.backgroundColor = 'var(--color-surface-light)';
-                    e.currentTarget.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
-                    e.currentTarget.style.borderColor = 'var(--color-primary)';
+                    e.currentTarget.style.backgroundImage = 'var(--gradient-hover)';
+                    e.currentTarget.style.boxShadow = 'var(--shadow-hover)';
                   }}
                   onMouseOut={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.backgroundColor = 'var(--color-surface)';
-                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                    e.currentTarget.style.backgroundColor = ''; /* Reset to CSS class default or inherited */
+                    e.currentTarget.style.backgroundImage = '';
+                    e.currentTarget.style.boxShadow = 'var(--shadow-soft)';
                   }}
                 >
                   <Image src={social.icon} width={social.size} height={social.size} alt="" />
@@ -116,7 +114,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section style={{ 
+          <section style={{
             padding: 'var(--space-8)',
             backgroundColor: 'var(--color-surface)',
             borderRadius: '24px',
@@ -124,8 +122,9 @@ export default function Home() {
             width: '100%',
             position: 'relative',
             overflow: 'hidden',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+            overflow: 'hidden',
+            boxShadow: 'var(--shadow-soft)',
+            background: 'var(--gradient-surface)'
           }}>
             <div style={{
               position: 'absolute',
@@ -136,7 +135,7 @@ export default function Home() {
               background: '#83A8FF',
               opacity: 0.3
             }} />
-            <p style={{ 
+            <p style={{
               fontSize: '1.5rem',
               fontWeight: 'bold',
               marginBottom: 'var(--space-6)',
@@ -147,7 +146,7 @@ export default function Home() {
               ¿Pasión por los shohin?
             </p>
             <div style={{ textAlign: 'center' }}>
-              <Link 
+              <Link
                 href="/shohin"
                 style={{
                   display: 'inline-block',
@@ -158,20 +157,17 @@ export default function Home() {
                   textDecoration: 'none',
                   transition: 'all 0.3s ease-in-out',
                   boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
-                  border: '1px solid rgba(131, 168, 255, 0.2)',
                   fontWeight: '500'
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-hover)';
                   e.currentTarget.style.backgroundColor = '#2d3754';
-                  e.currentTarget.style.borderColor = '#83A8FF';
                 }}
                 onMouseOut={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
                   e.currentTarget.style.backgroundColor = '#232C43';
-                  e.currentTarget.style.borderColor = 'rgba(131, 168, 255, 0.2)';
                 }}
               >
                 Descubre más

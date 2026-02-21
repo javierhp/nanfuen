@@ -7,12 +7,12 @@
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   position: relative;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-soft);
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-hover);
 }
 
 .productImage {
@@ -44,7 +44,7 @@
 }
 
 .soldOverlay {
-  background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.9) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   color: white;
@@ -105,5 +105,5 @@
 .details {
   margin-top: auto;
   padding-top: var(--space-3);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }

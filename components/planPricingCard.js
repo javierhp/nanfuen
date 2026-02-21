@@ -6,6 +6,7 @@ export function PlanCard({ plan }) {
 
   return (
     <Card
+      className="card border-0 mb-4"
       style={{ width: '18rem', textDecoration: plan.enabled ? 'none' : 'line-through' }}
       key={plan.name}
     >
