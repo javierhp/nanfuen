@@ -360,5 +360,18 @@
         "available": "YES",
         "name": "Espinillo 2",
         "code": "ES002"
+    },
+    {
+        "type": "tree",
+        "tree": "Itoigawa 70",
+        "tree_width": "18",
+        "tree_height": "12",
+        "nebari": "4",
+        "priceARS": "",
+        "img": "",
+        "priceUSD": "380",
+        "available": "YES",
+        "name": "Itoigawa 70",
+        "code": "IT070"
     }
 ]
