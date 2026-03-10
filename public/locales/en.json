@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "shohin": "Shohin",
+    "classes": "Classes & Workshops",
+    "catalog": "Catalog",
+    "all": "All",
+    "trees": "Trees",
+    "pots": "Pots",
+    "tools": "Tools"
+  },
+  "home": {
+    "title": "Nanfuen Bonsai",
+    "subtitle": "Conceived in Japan, with Argentine roots",
+    "shohinTitle": "Passion for Shohin?",
+    "shohinCta": "Discover more"
+  },
+  "footer": {
+    "copyright": "© 2024 Nanfuen Bonsai. All rights reserved."
+  }
+}

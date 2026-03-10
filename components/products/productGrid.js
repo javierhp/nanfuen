@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col, Accordion } from 'react-bootstrap';
 import FilterBar from './FilterBar';
-import ProductList from './productList';
-import styles from './productGrid.module.css';
 import ProductCard from './productCard';
 import ProductCardSkeleton from './ProductCardSkeleton';
 import productsData from '../../public/data/prodcuts.json';

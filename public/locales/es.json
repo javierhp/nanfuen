@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de nosotros",
+    "shohin": "Shohin",
+    "classes": "Clases y Talleres",
+    "catalog": "Catálogo",
+    "all": "Todo",
+    "trees": "Árboles",
+    "pots": "Macetas",
+    "tools": "Herramientas"
+  },
+  "home": {
+    "title": "Nanfuen Bonsai",
+    "subtitle": "Ideado en Japon, con raices argentinas",
+    "shohinTitle": "¿Pasión por los shohin?",
+    "shohinCta": "Descubre más"
+  },
+  "footer": {
+    "copyright": "© 2024 Nanfuen Bonsai. Todos los derechos reservados."
+  }
+}

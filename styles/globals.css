@@ -1,37 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
-  /* Base configuration */
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  /* Colors - Minimal Dark Theme (Nanfuen Logo Palette) */
+  --color-bg: #0D1117;
+  --color-surface: #161B22;
+  --color-surface-hover: #1C2333;
+  --color-border: #21262D;
+  
+  --color-primary: #93B4F5; /* Enso circle */
+  --color-primary-muted: rgba(147, 180, 245, 0.15);
+  
+  --color-secondary: #B5A06A; /* Mate gourd */
+  --color-secondary-muted: rgba(181, 160, 106, 0.15);
 
-  /* Colors - Dark Theme */
-  --color-primary: #83A8FF;
-  --color-primary-light: #a3bfff;
-  --color-secondary: #83A8FF;
-  --color-text: #E0E0E0;
-  --color-text-light: #9E9E9E;
-  --color-background: #121212;
-  --color-surface: #1E1E1E;
-  --color-surface-light: #2D2D2D;
-  --color-button: #232C43;
-  --color-button-hover: #2d3754;
+  --color-text: #E6EDF3;
+  --color-text-light: #8B949E;
+  --color-text-muted: #8B949E;
+  --color-text-heading: #FFFFFF;
 
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 10, 14, 23;
-  --background-end-rgb: 20, 25, 38;
+  --color-navy: #1B2A4A; /* Bonsai trunk */
 
-  --accent-color: #83A8FF;
-  --gradient-primary: linear-gradient(135deg, #83A8FF 0%, #5C80D1 100%);
-  --gradient-accent: linear-gradient(to right, #83A8FF 0%, #83A8FF 100%);
-  --gradient-surface: linear-gradient(145deg, #1E2330 0%, #171B25 100%);
-  --gradient-hover: linear-gradient(145deg, #252B3B 0%, #1E2330 100%);
-  --shadow-soft: 8px 8px 16px #0e1118, -8px -8px 16px #262f3e;
-  --shadow-hover: 12px 12px 20px #0e1118, -12px -12px 20px #262f3e;
+  /* Extracted Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, #5C80D1 100%);
+  --gradient-accent: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) 100%);
+  --gradient-surface: var(--color-surface);
+  --gradient-hover: var(--color-surface-hover);
+
+  /* Bootstrap Dark Mode Overrides */
+  --bs-body-bg: var(--color-bg);
+  --bs-body-color: var(--color-text);
+  --bs-primary: var(--color-primary);
+  --bs-secondary: var(--color-secondary);
+  --bs-border-color: var(--color-border);
+  --bs-link-color: var(--color-primary);
+  --bs-link-hover-color: var(--color-secondary);
 
   /* Typography */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
 
   /* Spacing */
@@ -44,75 +49,117 @@
   --space-12: 3rem;
   --space-16: 4rem;
 
-  /* Breakpoints */
-  --bp-sm: 640px;
-  --bp-md: 768px;
-  --bp-lg: 1024px;
-  --bp-xl: 1280px;
+  /* Layout */
+  --max-width: 1200px;
+  --border-radius: 4px; /* More minimal, less rounded */
+  
+  /* Shadows */
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Base styles */
+/* Force dark theme */
+html[data-bs-theme="dark"],
+body[data-bs-theme="dark"],
+:root {
+  color-scheme: dark;
+}
+
 html,
 body {
   font-family: var(--font-sans);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--color-text);
-  background-color: var(--color-background);
+  background-color: var(--color-bg);
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #__next {
-  background-color: var(--color-background);
+  background-color: var(--color-bg);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Card and surface styling */
-.card {
-  background: var(--gradient-surface);
-  border: none;
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-heading);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Buttons overriding Bootstrap defaults for minimalist aesthetic */
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-bg) !important;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-soft);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  padding: var(--space-2) var(--space-4);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+  color: var(--color-bg) !important;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent !important;
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text-heading) !important;
+  border-color: var(--color-text-muted) !important;
+}
+
+/* Clean up card styles generated by the app */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+  background: var(--color-surface-hover);
+  border-color: var(--color-border);
 }
 
-.btn {
-  background: var(--gradient-primary);
-  border: none;
-  color: #fff;
-  /* Ensure text is white on primary gradient */
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, box-shadow 0.2s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
-  box-shadow: 0 6px 12px rgba(131, 168, 255, 0.3);
-}
-
-/* Accent elements */
+/* Remove old gradients / neumorphism */
 .accent-gradient {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-primary);
 }
 
 /* Layout utilities */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-4);
 }
@@ -138,55 +185,9 @@ body {
   justify-content: space-between;
 }
 
-/* Product card styles */
-.product-card {
-  position: relative;
-  display: inline-block;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background: var(--color-surface);
-  transition: transform 0.2s ease-in-out;
-}
-
-.product-card:hover {
-  transform: translateY(-2px);
-}
-
-.product-card .product-image {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: auto;
-}
-
-.product-card .sold-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.product-card.sold .product-image {
-  filter: grayscale(100%);
-}
-
-.product-card.sold .sold-overlay {
-  display: flex;
-}
-
 /* Utilities for Shohin page */
 .dark-text {
-  color: var(--accent-color);
+  color: var(--color-secondary);
   margin-bottom: var(--space-4);
 }
 
@@ -197,5 +198,5 @@ body {
 
 .rounded {
   border-radius: var(--border-radius) !important;
-  box-shadow: var(--shadow-soft);
+  box-shadow: none;
 }
