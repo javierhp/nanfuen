@@ -13,26 +13,38 @@ export default function Menu() {
 
   const otherLocale = locale === 'es' ? 'en' : 'es';
 
-  // Switch language without reload
+  // Switch language and navigate to the translated route
   const handleLanguageSwitch = () => {
     setLocale(otherLocale);
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('nanfuen-locale', otherLocale);
     }
+    
+    // Attempt to swap the base locale in the current URL path
+    const pathParts = router.pathname.split('/');
+    if (pathParts[1] === '[locale]') {
+      // Replace [locale] in the pathname but we actually need asPath to preserve dynamic segments
+      // like /es/catalog/Pot to /en/catalog/Pot
+      const currentUrl = router.asPath;
+      const newUrl = currentUrl.replace(`/${locale}`, `/${otherLocale}`);
+      router.push(newUrl);
+    } else {
+      router.push(`/${otherLocale}`);
+    }
   };
 
   const navLinks = [
-    { href: '/', label: t('nav.home') },
-    { href: '/about', label: t('nav.about') },
-    { href: '/shohin', label: t('nav.shohin') },
-    { href: '/classes', label: t('nav.classes') },
+    { href: `/${locale}`, label: t('nav.home') },
+    { href: `/${locale}/about`, label: t('nav.about') },
+    { href: `/${locale}/shohin`, label: t('nav.shohin') },
+    { href: `/${locale}/classes`, label: t('nav.classes') },
   ];
 
   const catalogLinks = [
-    { href: '/catalog', label: t('nav.all') },
-    { href: '/catalog/tree', label: t('nav.trees') },
-    { href: '/catalog/Pot', label: t('nav.pots') },
-    { href: '/catalog/Tools', label: t('nav.tools') },
+    { href: `/${locale}/catalog`, label: t('nav.all') },
+    { href: `/${locale}/catalog/tree`, label: t('nav.trees') },
+    { href: `/${locale}/catalog/Pot`, label: t('nav.pots') },
+    { href: `/${locale}/catalog/Tools`, label: t('nav.tools') },
   ];
 
   return (
