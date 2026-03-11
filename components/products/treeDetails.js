@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { useLanguage } from '../i18n/LanguageContext';
+
 function TreeDetails({ product }) {
+  const { locale } = useLanguage();
   return (
     <ul>
       <li key={`with${product.tree_width}`}>
-        <strong>Ancho:</strong> {product.tree_width} CM
+        <strong>{locale === 'en' ? 'Width:' : 'Ancho:'}</strong> {product.tree_width} CM
       </li>
       <li key={`hight${product.tree_height}`}>
-        <strong>Alto:</strong> {product.tree_height} CM
+        <strong>{locale === 'en' ? 'Height:' : 'Alto:'}</strong> {product.tree_height} CM
       </li>
     </ul>
   );

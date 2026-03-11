@@ -118,7 +118,7 @@ export default function Home() {
               fontSize: '1.5rem',
               fontWeight: '500',
               marginBottom: 'var(--space-6)',
-            }}>
+            }} className="dark-text">
               {t('home.shohinTitle')}
             </h2>
             <Link

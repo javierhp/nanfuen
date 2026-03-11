@@ -11,10 +11,10 @@ export default function About() {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 mx-auto">
-              <h1 className={styles.title}>{t('about.title')}</h1>
+              <h1 className="dark-text">{t('about.title')}</h1>
 
               <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>{t('about.beginning.title')}</h2>
+                <h2 className="dark-text">{t('about.beginning.title')}</h2>
                 <div className={styles.textBlock}>
                   <p className={styles.paragraph}>{t('about.beginning.text')}</p>
                   <div className={styles.imageContainer}>
@@ -30,7 +30,7 @@ export default function About() {
               </section>
 
               <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>{t('about.meaning.title')}</h2>
+                <h2 className="dark-text">{t('about.meaning.title')}</h2>
                 <div className={styles.textBlock}>
                   <p className={styles.paragraph}>{t('about.meaning.text1')}</p>
                   <div className={styles.imageContainer}>
@@ -47,7 +47,7 @@ export default function About() {
               </section>
 
               <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>{t('about.milestones.title')}</h2>
+                <h2 className="dark-text">{t('about.milestones.title')}</h2>
                 <div className={styles.textBlock}>
                   <p className={styles.paragraph}>{t('about.milestones.text')}</p>
                   <div className={styles.imageContainer}>
@@ -63,14 +63,14 @@ export default function About() {
               </section>
 
               <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>{t('about.mission.title')}</h2>
+                <h2 className="dark-text">{t('about.mission.title')}</h2>
                 <div className={styles.textBlock}>
                   <p className={styles.paragraph}>{t('about.mission.text')}</p>
                 </div>
               </section>
 
               <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>{t('about.contact.title')}</h2>
+                <h2 className="dark-text">{t('about.contact.title')}</h2>
                 <div className={styles.textBlock}>
                   <p className={styles.paragraph}>{t('about.contact.text')}</p>
                 </div>

@@ -52,7 +52,7 @@ export function PlanCard({ plan }) {
             {plan.enabled ? btnEnroll : btnUnavailable}
           </a>
         )}
-        {name.includes('Workshop') && (
+        {(plan.id === 'workshop' || plan.id === 'custom' || name.includes('Workshop')) && (
           <button className={`btn btn-primary ${styles.actionBtn}`} disabled={!plan.enabled}>
             {plan.enabled ? btnMail : btnUnavailable}
           </button>

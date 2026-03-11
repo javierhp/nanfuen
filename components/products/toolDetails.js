@@ -2,14 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ToolDetails({ product }) {
-  return (
-    <ul>
-      <li>test</li>
-      {/* <li key={`Forma${product.potShape}`}>
-        <strong>Forma:</strong> {product.potShape}
-      </li> */}
-    </ul>
-  );
+  return null;
 }
 
 ToolDetails.propTypes = {

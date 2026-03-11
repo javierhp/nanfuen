@@ -26,7 +26,7 @@ export default function Shohin() {
               <Image className="rounded mt-4" src={firstImage} height={300} alt="Bonsai Shohin" style={{ objectFit: 'cover' }} />
             </section>
 
-            <section className="text-left" style={{ marginBottom: 'var(--space-12)' }}>
+            <section className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
               <h3 className="dark-text">
                 {t('shohin.section2.title')}
               </h3>
@@ -36,7 +36,7 @@ export default function Shohin() {
               <Image className="rounded mt-4" src={secondImage} height={300} alt="Bonsai Shohin" style={{ objectFit: 'cover' }} />
             </section>
 
-            <section className="text-right" style={{ marginBottom: 'var(--space-12)' }}>
+            <section className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
               <h3 className="dark-text">
                 {t('shohin.section3.title')}
               </h3>
@@ -45,21 +45,21 @@ export default function Shohin() {
               <Image className="rounded mt-4" src={thirdImage} height={300} alt="Bonsai Shohin" style={{ objectFit: 'cover' }} />
             </section>
 
-            <section className="text-left" style={{ marginBottom: 'var(--space-12)' }}>
+            <section className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
               <h3 className="dark-text">{t('shohin.section4.title')}</h3>
               <p className="light-text">{t('shohin.section4.text1')}</p>
               <p className="light-text">{t('shohin.section4.text2')}</p>
               <Image className="rounded mt-4" src={fourthImage} height={300} alt="Bonsai Shohin" style={{ objectFit: 'cover' }} />
             </section>
 
-            <section className="text-left" style={{ marginBottom: 'var(--space-12)' }}>
+            <section className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
               <h3 className="dark-text">{t('shohin.section5.title')}</h3>
               <p className="light-text">{t('shohin.section5.text1')}</p>
               <p className="light-text">{t('shohin.section5.text2')}</p>
               <Image className="rounded mt-4" src={fifthImage} height={300} alt="Bonsai Shohin" style={{ objectFit: 'cover' }} />
             </section>
 
-            <section className="text-right" style={{ marginBottom: 'var(--space-12)' }}>
+            <section className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
               <h3 className="dark-text">{t('shohin.section6.title')}</h3>
               <p className="light-text">{t('shohin.section6.text1')}</p>
               <p className="light-text">{t('shohin.section6.text2')}</p>
