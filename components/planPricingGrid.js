@@ -4,15 +4,18 @@ import PropTypes from 'prop-types';
 
 export default function PricingGrid({ plans }) {
   return (
-    <Container>
-      <Row xs={1} sm={1} md={2} lg={3}>
-        {plans.map((plan) => (
-          <Col key={plan.id} className="mb-4">
-            <PlanCard plan={plan} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+      gap: 'var(--space-6)',
+      alignItems: 'stretch'
+    }}>
+      {plans.map((plan, i) => (
+        <div key={i}>
+          <PlanCard plan={plan} />
+        </div>
+      ))}
+    </div>
   );
 }
 

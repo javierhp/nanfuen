@@ -74,7 +74,7 @@ const ProductCardSkeleton = () => {
         </div>
       </Card.Body>
 
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes shimmer {
           0% {
             background-position: 200% 0;
@@ -83,7 +83,7 @@ const ProductCardSkeleton = () => {
             background-position: -200% 0;
           }
         }
-      `}</style>
+      `}} />
     </Card>
   );
 };

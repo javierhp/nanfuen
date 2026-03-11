@@ -14,7 +14,7 @@ describe('Form Components Smoke Tests', () => {
         render(<FilterBar filterState={mockFilterState} onFilterChange={mockOnChange} />);
       
       // Verify filter inputs are present
-      const typeSelect = screen.getByText('Categoria').nextElementSibling;
+      const typeSelect = screen.getByText('Categoría').nextElementSibling;
       expect(typeSelect).toBeInTheDocument();
       
       // Test type filter interaction
@@ -28,7 +28,7 @@ describe('Form Components Smoke Tests', () => {
       render(<PlanSearchBar />);
       
       // Verify category select exists
-      const categorySelect = screen.getByText('Categoria:').nextElementSibling;
+      const categorySelect = screen.getByText('Categoría:').nextElementSibling;
       expect(categorySelect).toBeInTheDocument();
       
       // Test category selection is present

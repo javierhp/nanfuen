@@ -84,13 +84,21 @@ export default function Home() {
                     transition: 'all 0.2s ease',
                   }}
                   onMouseOver={(e) => {
-                    e.currentTarget.style.color = 'var(--color-primary)';
+                    e.currentTarget.style.backgroundColor = 'var(--color-primary-dark)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--color-primary-dark)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseOut={(e) => {
-                    e.currentTarget.style.color = 'var(--color-text)';
+                    e.currentTarget.style.backgroundColor = 'var(--color-primary)';
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
-                >
-                  <Image src={social.icon} width={social.size} height={social.size} alt="" style={{ filter: 'grayscale(100%) opacity(0.8)' }} />
+                  onBlur={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--color-primary)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}><Image src={social.icon} width={social.size} height={social.size} alt="" style={{ filter: 'grayscale(100%) opacity(0.8)' }} />
                   <span>{social.label}</span>
                 </a>
               ))}

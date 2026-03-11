@@ -10,17 +10,21 @@ describe('Core components smoke test', () => {
     expect(screen.getByText('Filtros')).toBeInTheDocument()
   })
 
-  test('PricingGrid renders with sample plans', () => {
-    const samplePlan = {
-      id: 'test-plan-1',
-      name: 'Test Plan',
-      category: 'virtual',
-      pack: 'monthly',
-      priceUSD: '19.99',
-      features: ['Feature 1', 'Feature 2'],
-      enabled: true
-    }
-    render(<PricingGrid plans={[samplePlan]} />)
-    expect(screen.getByText('Test Plan')).toBeInTheDocument()
-  })
+  describe('PricingGrid', () => {
+    it('renders with sample plans', () => {
+    const mockPlans = [
+      {
+        id: 1,
+        name_es: 'Sample Plan',
+        priceUSD: 10,
+        category: 'virtual',
+        features_es: ['Feature 1'],
+        enabled: true
+      }
+    ];
+
+    render(<PricingGrid plans={mockPlans} />);
+    expect(screen.getByText('Sample Plan')).toBeInTheDocument();
+  });
+});
 })

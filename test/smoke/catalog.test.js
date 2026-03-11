@@ -1,5 +1,5 @@
 const path = require('path')
-const catalogPage = require(path.resolve(__dirname, '..', '..', 'pages', 'catalog', '[category].js'))
+const catalogPage = require(path.resolve(__dirname, '..', '..', 'pages', '[locale]', 'catalog', '[category].js'))
 
 describe('catalog page data functions (smoke)', () => {
   const { getStaticPaths, getStaticProps } = catalogPage

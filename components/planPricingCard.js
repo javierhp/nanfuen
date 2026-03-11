@@ -1,65 +1,76 @@
-import { Card, Button } from 'react-bootstrap';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useLanguage } from './i18n/LanguageContext';
+import styles from './planPricingCard.module.css';
 
 export function PlanCard({ plan }) {
-  const { name, description, priceInUSD, priceInARS, category, pack, enabled } = plan;
+  const { locale } = useLanguage();
+
+  const name = locale === 'en' ? plan.name_en : plan.name_es;
+  const pack = locale === 'en' ? plan.pack_en : plan.pack_es;
+  const features = locale === 'en' ? plan.features_en : plan.features_es;
+  const priceLabel = locale === 'en' ? 'Price in USD: ' : 'Precio en USD: ';
+  const priceVal = locale === 'en' && plan.priceUSD_en ? plan.priceUSD_en : plan.priceUSD;
+  const typeLabel = locale === 'en' ? 'Type: ' : 'Tipo: ';
+  const typeVal = plan.category === 'in person' 
+    ? (locale === 'en' ? 'In Person' : 'Presencial')
+    : (locale === 'en' ? 'Virtual' : 'Virtual');
+    
+  const btnEnroll = locale === 'en' ? 'Enroll' : 'Inscribirse';
+  const btnMail = locale === 'en' ? 'Email us' : 'Escribinos por mail';
+  const btnUnavailable = locale === 'en' ? 'Unavailable' : 'No disponible';
 
   return (
-    <Card
-      className="card border-0 mb-4"
-      style={{ width: '18rem', textDecoration: plan.enabled ? 'none' : 'line-through' }}
-      key={plan.name}
-    >
-      <Card.Header>{plan.name}</Card.Header>
-      <Card.Body>
-        <Card.Title>{plan.pack}</Card.Title>
-        {plan.priceUSD && <p>Precio en USD: {plan.priceUSD}</p>}
-        {plan.category && (
-          <p>Tipo: {plan.category === 'in person' ? 'Presenciales' : 'Virtuales'}</p>
-        )}
-        <ul>
-          {plan.features.map((feature) => (
-            <li key={feature}>{feature}</li>
+    <div className={`${styles.card} ${!plan.enabled ? styles.disabled : ''}`}>
+      <div className={styles.header}>
+        <h3 className={styles.title}>{name}</h3>
+        {pack && <span className={styles.pack}>{pack}</span>}
+      </div>
+      
+      <div className={styles.body}>
+        <div className={styles.meta}>
+          {plan.priceUSD && <p className={styles.price}><span>{priceLabel}</span>{priceVal}</p>}
+          {plan.category && <p className={styles.type}><span>{typeLabel}</span>{typeVal}</p>}
+        </div>
+
+        <ul className={styles.features}>
+          {features && features.map((feature, i) => (
+            <li key={i}>
+              <span className={styles.check}>✓</span> {feature}
+            </li>
           ))}
         </ul>
+      </div>
+
+      <div className={styles.footer}>
         {plan.category !== 'in person' && (
-          <Button
-            variant="primary"
-            disabled={!plan.enabled}
-            href="https://forms.gle/KKtXu8vW3k6s1fF57"
+          <a
+            className={`btn btn-primary ${styles.actionBtn}`}
+            href={plan.enabled ? "https://forms.gle/KKtXu8vW3k6s1fF57" : undefined}
+            tabIndex={plan.enabled ? 0 : -1}
           >
-            {plan.enabled ? 'Inscribirse' : 'No disponible'}
-          </Button>
+            {plan.enabled ? btnEnroll : btnUnavailable}
+          </a>
         )}
-        {plan.name === 'Workshop' && (
-          <Button variant="primary" disabled={!plan.enabled}>
-            {plan.enabled ? 'Escribinos por mail' : 'No disponible'}
-          </Button>
+        {name.includes('Workshop') && (
+          <button className={`btn btn-primary ${styles.actionBtn}`} disabled={!plan.enabled}>
+            {plan.enabled ? btnMail : btnUnavailable}
+          </button>
         )}
-        {plan.name === 'Talleres presenciales' && (
-          <Button
-            variant="primary"
-            disabled={!plan.enabled}
-            href="https://forms.gle/HTX91yHzCr4Ab2q16"
+        {(name.includes('presencial') || name.includes('In-person')) && (
+          <a
+            className={`btn btn-primary ${styles.actionBtn}`}
+            href={plan.enabled ? "https://forms.gle/HTX91yHzCr4Ab2q16" : undefined}
+            tabIndex={plan.enabled ? 0 : -1}
           >
-            {plan.enabled ? 'Inscribirse' : 'No disponible'}
-          </Button>
+            {plan.enabled ? btnEnroll : btnUnavailable}
+          </a>
         )}
-      </Card.Body>
-    </Card>
+      </div>
+    </div>
   );
 }
 
 PlanCard.propTypes = {
-  plan: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    priceInUSD: PropTypes.number,
-    priceInARS: PropTypes.number,
-    category: PropTypes.oneOf(['in person', 'virtual']),
-    pack: PropTypes.string,
-    enabled: PropTypes.bool,
-    features: PropTypes.arrayOf(PropTypes.string),
-    priceUSD: PropTypes.number
-  }).isRequired
+  plan: PropTypes.object.isRequired
 };

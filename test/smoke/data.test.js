@@ -7,11 +7,11 @@ describe('Data files smoke test', () => {
     expect(pricingData.length).toBeGreaterThan(0)
     
     const plan = pricingData[0]
-    expect(plan).toHaveProperty('name')
+    expect(plan).toHaveProperty('name_es')
     expect(plan).toHaveProperty('category')
     expect(plan).toHaveProperty('priceUSD')
-    expect(plan).toHaveProperty('features')
-    expect(Array.isArray(plan.features)).toBe(true)
+    expect(plan).toHaveProperty('features_es')
+    expect(Array.isArray(plan.features_es)).toBe(true)
   })
 
   test('products data has expected structure', () => {
