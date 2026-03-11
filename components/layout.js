@@ -1,4 +1,5 @@
 import Menu from './menu';
+import Footer from './footer';
 import Head from 'next/head';
 import Container from 'react-bootstrap/Container';
 import PropTypes from 'prop-types';
@@ -9,7 +10,7 @@ export const siteTitle = 'Nanfuen Sample Website';
 function Layout({ children }) {
   return (
     <div style={{ 
-      backgroundColor: 'var(--color-background)',
+      backgroundColor: 'var(--color-bg)',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column'
@@ -27,19 +28,20 @@ function Layout({ children }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#121212" />
+        <meta name="theme-color" content="#0D1117" />
       </Head>
       <header>
         <Menu />
       </header>
       <main style={{ 
         flex: 1,
-        backgroundColor: 'var(--color-background)',
+        backgroundColor: 'var(--color-bg)',
         position: 'relative',
         zIndex: 0
       }}>
         {children}
       </main>
+      <Footer />
     </div>
   );
 }

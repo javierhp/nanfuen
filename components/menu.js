@@ -8,20 +8,16 @@ import styles from './menu.module.css';
 export default function Menu() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
-  const { locale, t } = useLanguage();
+  const { locale, setLocale, t } = useLanguage();
   const router = useRouter();
 
   const otherLocale = locale === 'es' ? 'en' : 'es';
 
-  // Build the alternate-locale URL for language switching
-  // Before i18n routing is in place, this simply switches the context
-  // After Phase 3, this will navigate to /[locale]/...
+  // Switch language without reload
   const handleLanguageSwitch = () => {
-    // For now (Phase 2) just reload with other locale stored in sessionStorage
-    // Phase 3 will replace this with proper URL-based navigation
+    setLocale(otherLocale);
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('nanfuen-locale', otherLocale);
-      router.reload();
     }
   };
 
