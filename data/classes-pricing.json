@@ -1,83 +1,129 @@
 [
-    {
-        "name": "Clases semanales",
-        "category": "virtual",
-        "pack": "Por mes",
-        "priceUSD": "20",
-        "priceARS": "12000",
-        "features": [
-            "Clases domingos de 7 a 9 PM Argentina",
-            "Acceso a más de 70 clases grabadas",
-            "Trabajos enfocados en temporada"
-        ],
-        "enabled": true
-    },
-    {
-        "name": "Pack trimestral: Clases semanales",
-        "category": "virtual",
-        "pack": "3 meses",
-        "priceUSD": "50",
-        "priceARS": "30000",
-        "features": [
-            "Ahorras 16%",
-            "Clases domingos de 7 a 9 PM Argentina",
-            "Acceso a más de 70 clases grabadas",
-            "Trabajos enfocados en temporada"
-        ],
-        "enabled": true
-    },
-    {
-        "name": "Pack semestral: Clases semanales",
-        "category": "virtual",
-        "pack": "6 meses",
-        "priceUSD": "100",
-        "priceARS": "60000",
-        "features": [
-            "1 mes gratis!",
-            "Clases domingos de 7 a 9 PM Argentina",
-            "Acceso a más de 70 clases grabadas",
-            "Trabajos enfocados en temporada"
-        ],
-        "enabled": true
-    },
-    {
-        "name": "Talleres presenciales",
-        "category": "in person",
-        "priceUSD": "35",
-        "priceARS": "",
-        "features": [
-            "2hs de duracion",
-            "Orientado a los trabajos de la temporada", 
-            "Podes traer tu material o usar el del vivero",
-            "Cupos limitados",
-            "Martes o Jueves de 7 a 9 PM Argentina"
-        ],
-        "enabled": true
-    },
-    {
-        "name": "Workshop",
-        "category": "in person",
-        "priceUSD": "70",
-        "priceARS": "",
-        "features": [
-            "Taller intensivo de un día",
-            "Podes traer tu material o usar el del vivero",
-            "Trabajos de temporada",
-            "Dias y horarios a acordar"
-        ],
-        "enabled": true
-    },
-    {
-        "name": "Trabajos particulares de colección",
-        "category": "in person",
-        "priceUSD": "Desde 50 la hora",
-        "priceARS": "Desde 40000",
-        "features": [
-            "Mantenimientos",
-            "Diseños",
-            "Refinados",
-            "Precio final a acordar"
-        ],
-        "enabled": true
-    }
+  {
+    "id": "monthly",
+    "name_es": "Clases semanales",
+    "name_en": "Weekly classes",
+    "pack_es": "Por mes",
+    "pack_en": "Per month",
+    "priceUSD": "20",
+    "category": "virtual",
+    "features_es": [
+      "Clases domingos de 7 a 9 PM Argentina",
+      "Acceso a más de 70 clases grabadas",
+      "Trabajos enfocados en temporada"
+    ],
+    "features_en": [
+      "Classes Sundays 7-9 PM Argentina time",
+      "Access to over 70 recorded classes",
+      "Season-focused work"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "quarterly",
+    "name_es": "Pack trimestral: Clases semanales",
+    "name_en": "Quarterly pack: Weekly classes",
+    "pack_es": "3 meses",
+    "pack_en": "3 months",
+    "priceUSD": "50",
+    "category": "virtual",
+    "features_es": [
+      "Ahorras 16%",
+      "Clases domingos de 7 a 9 PM Argentina",
+      "Acceso a más de 70 clases grabadas",
+      "Trabajos enfocados en temporada"
+    ],
+    "features_en": [
+      "Save 16%",
+      "Classes Sundays 7-9 PM Argentina time",
+      "Access to over 70 recorded classes",
+      "Season-focused work"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "biannual",
+    "name_es": "Pack semestral: Clases semanales",
+    "name_en": "Biannual pack: Weekly classes",
+    "pack_es": "6 meses",
+    "pack_en": "6 months",
+    "priceUSD": "100",
+    "category": "virtual",
+    "features_es": [
+      "1 mes gratis!",
+      "Clases domingos de 7 a 9 PM Argentina",
+      "Acceso a más de 70 clases grabadas",
+      "Trabajos enfocados en temporada"
+    ],
+    "features_en": [
+      "1 month free!",
+      "Classes Sundays 7-9 PM Argentina time",
+      "Access to over 70 recorded classes",
+      "Season-focused work"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "inPerson",
+    "name_es": "Talleres presenciales",
+    "name_en": "In-person workshops",
+    "priceUSD": "35",
+    "category": "in person",
+    "features_es": [
+      "2hs de duracion",
+      "Orientado a los trabajos de la temporada",
+      "Podes traer tu material o usar el del vivero",
+      "Cupos limitados",
+      "Martes o Jueves de 7 a 9 PM Argentina"
+    ],
+    "features_en": [
+      "2 hour duration",
+      "Oriented to seasonal work",
+      "Bring your own material or use the nursery's",
+      "Limited spots",
+      "Tuesday or Thursday 7-9 PM Argentina time"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "workshop",
+    "name_es": "Workshop",
+    "name_en": "Intensive Workshop",
+    "priceUSD": "70",
+    "category": "in person",
+    "features_es": [
+      "Taller intensivo de un día",
+      "Podes traer tu material o usar el del vivero",
+      "Trabajos de temporada",
+      "Dias y horarios a acordar"
+    ],
+    "features_en": [
+      "One-day intensive workshop",
+      "Bring your own material or use the nursery's",
+      "Seasonal work",
+      "Days and times to be agreed upon"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "custom",
+    "name_es": "Trabajos particulares de colección",
+    "name_en": "Private collection work",
+    "priceUSD": "Desde 50 la hora",
+    "priceUSD_en": "From 50 per hour",
+    "category": "in person",
+    "features_es": [
+      "Mantenimientos",
+      "Diseños",
+      "Refinados",
+      "Precio final a acordar"
+    ],
+    "features_en": [
+      "Maintenance",
+      "Designs",
+      "Refinements",
+      "Final price to be agreed upon"
+    ],
+    "enabled": true
+  }
 ]

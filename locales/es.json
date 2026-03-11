@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de nosotros",
+    "shohin": "Shohin",
+    "classes": "Clases y Talleres",
+    "catalog": "Catálogo",
+    "all": "Todo",
+    "trees": "Árboles",
+    "pots": "Macetas",
+    "tools": "Herramientas"
+  },
+  "home": {
+    "title": "Nanfuen Bonsai",
+    "subtitle": "Ideado en Japón, con raíces argentinas",
+    "shohinTitle": "¿Pasión por los shohin?",
+    "shohinCta": "Descubre más"
+  },
+  "about": {
+    "title": "Descubre nuestra historia",
+    "beginning": {
+      "title": "Nuestro comienzo",
+      "text": "Nanfuen comienza como una idea despues del primer viaje a Japon (en 2014) y haber estudiado en Taisho-en por primera vez.",
+      "caption": "Primer viaje a Japon (2014)"
+    },
+    "meaning": {
+      "title": "El significado de Nanfuen",
+      "text1": "El nombre Nanfuen significa Viento del sur y fue elegido por mi Oyakata Nobuichi Urushibata, despues de preguntarle si podria comenzar mi propio estudio de bonsai.",
+      "caption": "Ceremonia de nombramiento por Nobuichi Urushibata",
+      "text2": "Dato curioso: el viento del sur en Japon se caracteriza por ser calido y apacible, especialmente en Shizuoka, el viento del sur en Argentina se caracteriza por ser frio pero tambien es muy representativo. Oyakata se rio bastante cuando se lo conte."
+    },
+    "milestones": {
+      "title": "Logros y hitos",
+      "text": "Desde entonces, hemos trabajado en establecer un lugar donde poder compartir nuestra pasion por el bonsai, a traves de clases, demostraciones y material de calidad para que todos puedan disfrutar de este arte.",
+      "caption": "Compartiendo conocimiento a traves de demostraciones"
+    },
+    "mission": {
+      "title": "Nuestra misión",
+      "text": "Nuestra misión es hacer el bonsai accesible a todos, proporcionando educación de calidad y materiales confiables. Creemos en mantener vivas las tradiciones mientras adoptamos métodos modernos de enseñanza."
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "text": "¿Interesado en comenzar tu viaje en el bonsai? Estamos aquí para ayudarte. Contáctanos para más información sobre clases, materiales o cualquier consulta."
+    }
+  },
+  "shohin": {
+    "section1": {
+      "title": "Bonsáis Shohin - Un mundo fascinante",
+      "text1": "Imagina un rincón de tu hogar transformado en un oasis de serenidad, donde la naturaleza se encuentra en perfecta armonía con la elegancia. Bienvenido al mundo fascinante de los bonsáis Shohin, donde la belleza se revela en cada centímetro."
+    },
+    "section2": {
+      "title": "Pequeños gigantes con historia",
+      "text1": "En este reino diminuto, cada Shohin es más que un simple árbol en maceta; es una obra maestra viva que cuenta su propia historia.",
+      "text2": "Estamos hablando de pequeños gigantes, con alturas que oscilan entre 15 y 25 cm, aunque a menudo se encuentran joyas más preciadas que no superan los 21 cm.",
+      "text3": "Imagina, en este espacio compacto, la oportunidad de cultivar una colección diversa con una variedad de especies, cada una representando la esencia única de la naturaleza."
+    },
+    "section3": {
+      "title": "Detalles que cuentan historias",
+      "text1": "Estos tesoros vivientes no solo son accesibles, son portales hacia un mundo donde la atención meticulosa a los detalles se convierte en un ritual apasionante.",
+      "text2": "Cada rama, cada hoja, cuenta su propia historia, y tú eres el narrador. En el universo de los Shohin, encontrarás un desafío emocionante que te invita a explorar la paciencia y la precisión."
+    },
+    "section4": {
+      "title": "Elegancia en tu hogar",
+      "text1": "Ahora, visualiza este escenario: un Shohin cuidadosamente posicionado en tu hogar, destacando en un tokonoma, un nicho japonés destinado a exhibir objetos de arte.",
+      "text2": "Su belleza se despliega desde todos los ángulos, revelando la meticulosidad de su diseño y transportándote a un estado de calma y admiración."
+    },
+    "section5": {
+      "title": "Pasión por los Shohin",
+      "text1": "En mi vivero, nos sumergimos en el mundo de los Shohin con una pasión que nació en las tierras del sol naciente.",
+      "text2": "Cada árbol en nuestro cuidado es una conexión directa con mi fascinación mientras estudiaba en Japón. Aquí, te ofrecemos más que simples plantas en macetas; te presentamos a artistas vivientes listos para ser parte de tu historia."
+    },
+    "section6": {
+      "title": "Eficiencia inspiradora",
+      "text1": "¿Te imaginas tener la capacidad de trabajar con estos tesoros vivientes, esculpiendo su forma en menos tiempo que con árboles más grandes?",
+      "text2": "Sí, en el mundo de los Shohin, la atención al detalle se combina con la practicidad, permitiéndote no solo disfrutar de su belleza sino también crear con una eficiencia inspiradora."
+    },
+    "section7": {
+      "title": "Descubre el encanto único",
+      "text1": "Así que te invito a descubrir el encanto único de los Shohin en nuestro vivero. Cada uno de ellos cuenta una historia, y estoy emocionado por la posibilidad de que el próximo capítulo sea tuyo.",
+      "text2": "¿Listo para comenzar tu viaje en este mundo fascinante de miniaturas vivientes?"
+    }
+  },
+  "classes": {
+    "formats": "Estos son los formatos de talleres y clases que ofrecemos por el momento",
+    "blue": "Para gente en Argentina: tomamos la cotización 'Blue' del dólar, el mismo se puede encontrar"
+  },
+  "footer": {
+    "copyright": "© 2024 Nanfuen Bonsai. Todos los derechos reservados."
+  }
+}
