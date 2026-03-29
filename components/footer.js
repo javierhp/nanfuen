@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useLanguage } from './i18n/LanguageContext';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <footer style={{
@@ -40,10 +40,10 @@ export default function Footer() {
             <h4 style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-heading)', marginBottom: 'var(--space-2)' }}>
               Enlaces
             </h4>
-            <Link href="/about" style={{ color: 'var(--color-text)', textDecoration: 'none', fontSize: '0.9rem' }}>{t('nav.about')}</Link>
-            <Link href="/classes" style={{ color: 'var(--color-text)', textDecoration: 'none', fontSize: '0.9rem' }}>{t('nav.classes')}</Link>
-            <Link href="/catalog" style={{ color: 'var(--color-text)', textDecoration: 'none', fontSize: '0.9rem' }}>{t('nav.catalog')}</Link>
-            <Link href="/shohin" style={{ color: 'var(--color-text)', textDecoration: 'none', fontSize: '0.9rem' }}>{t('nav.shohin')}</Link>
+            <Link href={`/${locale}/about`} style={{ color: 'var(--color-text)', textDecoration: 'none', fontSize: '0.9rem' }}>{t('nav.about')}</Link>
+            <Link href={`/${locale}/classes`} style={{ color: 'var(--color-text)', textDecoration: 'none', fontSize: '0.9rem' }}>{t('nav.classes')}</Link>
+            <Link href={`/${locale}/catalog`} style={{ color: 'var(--color-text)', textDecoration: 'none', fontSize: '0.9rem' }}>{t('nav.catalog')}</Link>
+            <Link href={`/${locale}/shohin`} style={{ color: 'var(--color-text)', textDecoration: 'none', fontSize: '0.9rem' }}>{t('nav.shohin')}</Link>
           </div>
 
           {/* Social Column */}
