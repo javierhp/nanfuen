@@ -82,7 +82,8 @@
   },
   "classes": {
     "formats": "These are the workshop and class formats we currently offer",
-    "blue": "For people in Argentina: we consider the 'Blue' dollar quotation, which can be found"
+    "priceLabel": "International Prices",
+    "priceNote": "Prices are in USD. Contact us to confirm current rates."
   },
   "footer": {
     "copyright": "© 2024 Nanfuen Bonsai. All rights reserved."
