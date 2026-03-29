@@ -5,8 +5,10 @@
     "name_en": "Weekly classes",
     "pack_es": "Por mes",
     "pack_en": "Per month",
-    "priceUSD": "20",
+    "priceUSD_ar": "20",
+    "priceUSD_intl": "TBD",
     "category": "virtual",
+    "virtual": true,
     "features_es": [
       "Clases domingos de 7 a 9 PM Argentina",
       "Acceso a más de 70 clases grabadas",
@@ -25,8 +27,10 @@
     "name_en": "Quarterly pack: Weekly classes",
     "pack_es": "3 meses",
     "pack_en": "3 months",
-    "priceUSD": "50",
+    "priceUSD_ar": "50",
+    "priceUSD_intl": "TBD",
     "category": "virtual",
+    "virtual": true,
     "features_es": [
       "Ahorras 16%",
       "Clases domingos de 7 a 9 PM Argentina",
@@ -47,8 +51,10 @@
     "name_en": "Biannual pack: Weekly classes",
     "pack_es": "6 meses",
     "pack_en": "6 months",
-    "priceUSD": "100",
+    "priceUSD_ar": "100",
+    "priceUSD_intl": "TBD",
     "category": "virtual",
+    "virtual": true,
     "features_es": [
       "1 mes gratis!",
       "Clases domingos de 7 a 9 PM Argentina",
@@ -67,8 +73,10 @@
     "id": "inPerson",
     "name_es": "Talleres presenciales",
     "name_en": "In-person workshops",
-    "priceUSD": "35",
+    "priceUSD_ar": "35",
+    "priceUSD_intl": "75",
     "category": "in person",
+    "virtual": false,
     "features_es": [
       "2hs de duracion",
       "Orientado a los trabajos de la temporada",
@@ -80,8 +88,7 @@
       "2 hour duration",
       "Oriented to seasonal work",
       "Bring your own material or use the nursery's",
-      "Limited spots",
-      "Tuesday or Thursday 7-9 PM Argentina time"
+      "Limited spots"
     ],
     "enabled": true
   },
@@ -89,8 +96,10 @@
     "id": "workshop",
     "name_es": "Workshop",
     "name_en": "Intensive Workshop",
-    "priceUSD": "70",
+    "priceUSD_ar": "70",
+    "priceUSD_intl": "300",
     "category": "in person",
+    "virtual": false,
     "features_es": [
       "Taller intensivo de un día",
       "Podes traer tu material o usar el del vivero",
@@ -109,9 +118,10 @@
     "id": "custom",
     "name_es": "Trabajos particulares de colección",
     "name_en": "Private collection work",
-    "priceUSD": "Desde 50 la hora",
-    "priceUSD_en": "From 50 per hour",
+    "priceUSD_ar": "Desde 50 la hora",
+    "priceUSD_intl": "From 75 USD per hour",
     "category": "in person",
+    "virtual": false,
     "features_es": [
       "Mantenimientos",
       "Diseños",

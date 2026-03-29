@@ -4,18 +4,18 @@ import { useLanguage } from './i18n/LanguageContext';
 import styles from './planPricingCard.module.css';
 
 export function PlanCard({ plan }) {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
 
   const name = locale === 'en' ? plan.name_en : plan.name_es;
   const pack = locale === 'en' ? plan.pack_en : plan.pack_es;
   const features = locale === 'en' ? plan.features_en : plan.features_es;
-  const priceLabel = locale === 'en' ? 'Price in USD: ' : 'Precio en USD: ';
-  const priceVal = locale === 'en' && plan.priceUSD_en ? plan.priceUSD_en : plan.priceUSD;
+  const priceVal = locale === 'en' ? plan.priceUSD_intl : plan.priceUSD_ar;
+  const priceLabel = locale === 'en' ? 'Price (USD): ' : 'Precio (USD): ';
   const typeLabel = locale === 'en' ? 'Type: ' : 'Tipo: ';
-  const typeVal = plan.category === 'in person' 
+  const typeVal = plan.category === 'in person'
     ? (locale === 'en' ? 'In Person' : 'Presencial')
     : (locale === 'en' ? 'Virtual' : 'Virtual');
-    
+
   const btnEnroll = locale === 'en' ? 'Enroll' : 'Inscribirse';
   const btnMail = locale === 'en' ? 'Email us' : 'Escribinos por mail';
   const btnUnavailable = locale === 'en' ? 'Unavailable' : 'No disponible';
@@ -26,10 +26,10 @@ export function PlanCard({ plan }) {
         <h3 className={styles.title}>{name}</h3>
         {pack && <span className={styles.pack}>{pack}</span>}
       </div>
-      
+
       <div className={styles.body}>
         <div className={styles.meta}>
-          {plan.priceUSD && <p className={styles.price}><span>{priceLabel}</span>{priceVal}</p>}
+          {priceVal && <p className={styles.price}><span>{priceLabel}</span>{priceVal}</p>}
           {plan.category && <p className={styles.type}><span>{typeLabel}</span>{typeVal}</p>}
         </div>
 
