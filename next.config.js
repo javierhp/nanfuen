@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
@@ -14,14 +15,14 @@ const nextConfig = {
     const categories = ['Pot', 'tree', 'Tools'];
 
     locales.forEach((locale) => {
-      paths[`/${locale}`] = { page: '/[locale]' };
-      paths[`/${locale}/about`] = { page: '/[locale]/about' };
-      paths[`/${locale}/classes`] = { page: '/[locale]/classes' };
-      paths[`/${locale}/shohin`] = { page: '/[locale]/shohin' };
-      paths[`/${locale}/catalog`] = { page: '/[locale]/catalog' };
+      paths[`/${locale}`] = { page: '/[locale]', query: { locale } };
+      paths[`/${locale}/about`] = { page: '/[locale]/about', query: { locale } };
+      paths[`/${locale}/classes`] = { page: '/[locale]/classes', query: { locale } };
+      paths[`/${locale}/shohin`] = { page: '/[locale]/shohin', query: { locale } };
+      paths[`/${locale}/catalog`] = { page: '/[locale]/catalog', query: { locale } };
 
       categories.forEach((category) => {
-        paths[`/${locale}/catalog/${category}`] = { page: '/[locale]/catalog/[category]' };
+        paths[`/${locale}/catalog/${category}`] = { page: '/[locale]/catalog/[category]', query: { locale, category } };
       });
     });
 
