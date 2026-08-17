@@ -123,6 +123,29 @@
   white-space: nowrap;
 }
 
+.discountBadge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: linear-gradient(135deg, #e05252 0%, #c53030 100%);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(224, 82, 82, 0.35);
+  z-index: 2;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
 .price {
   font-size: 1.1rem;
   font-weight: 600;
@@ -130,7 +153,24 @@
   margin: 0;
 }
 
-.soldCard .price {
+.originalPrice {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  margin: 0;
+}
+
+.discountedPrice {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f7768e;
+  margin: 0;
+}
+
+.soldCard .price,
+.soldCard .discountedPrice,
+.soldCard .originalPrice {
   color: var(--color-text-muted);
   text-decoration: line-through;
 }

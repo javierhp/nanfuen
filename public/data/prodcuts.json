@@ -333,7 +333,10 @@
         "priceUSD": "1000",
         "available": "YES",
         "name": "Palo amarillo 2",
-        "code": "PA002"
+        "code": "PA002",
+        "discountPercentage": 20,
+        "discountStartDate": "2026-01-01T00:00:00Z",
+        "discountEndDate": "2026-09-18T23:59:59Z"
     },
     {
         "type": "tree",
@@ -346,7 +349,10 @@
         "priceUSD": "300",
         "available": "NO",
         "name": "Espinillo 1",
-        "code": "ES01"
+        "code": "ES01",
+        "discountPercentage": 20,
+        "discountStartDate": "2026-01-01T00:00:00Z",
+        "discountEndDate": "2026-09-18T23:59:59Z"
     },
     {
         "type": "tree",
@@ -359,7 +365,10 @@
         "priceUSD": "650",
         "available": "YES",
         "name": "Espinillo 2",
-        "code": "ES002"
+        "code": "ES002",
+        "discountPercentage": 20,
+        "discountStartDate": "2026-01-01T00:00:00Z",
+        "discountEndDate": "2026-09-18T23:59:59Z"
     },
     {
         "type": "tree",
@@ -372,6 +381,9 @@
         "priceUSD": "380",
         "available": "YES",
         "name": "Itoigawa 70",
-        "code": "IT070"
+        "code": "IT070",
+        "discountPercentage": 20,
+        "discountStartDate": "2026-01-01T00:00:00Z",
+        "discountEndDate": "2026-09-18T23:59:59Z"
     }
 ]

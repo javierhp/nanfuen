@@ -6,21 +6,24 @@ import ProductCard from './productCard';
 import ProductCardSkeleton from './ProductCardSkeleton';
 import productsData from '../../public/data/prodcuts.json';
 import HowToBuy from '../howToBuy';
+import { getEffectivePrice } from '../../utils/discount';
 
 const ProductGrid = ({ category }) => {
   function sortBySelection(selection, products) {
+    const sorted = [...products];
     switch (selection) {
       case 'price-asc':
-        return products.sort((a, b) => (Number(a.priceARS) < Number(b.priceARS) ? -1 : 1));
+        return sorted.sort((a, b) => getEffectivePrice(a) - getEffectivePrice(b));
       case 'price-desc':
-        return products.sort((a, b) => (Number(a.priceARS) > Number(b.priceARS) ? -1 : 1));
+        return sorted.sort((a, b) => getEffectivePrice(b) - getEffectivePrice(a));
       case 'name-desc':
-        return products.sort((a, b) => (a.name > b.name ? -1 : 1));
+        return sorted.sort((a, b) => (a.name > b.name ? -1 : 1));
       case 'name-asc':
       default:
-        return products.sort((a, b) => (a.name < b.name ? -1 : 1));
+        return sorted.sort((a, b) => (a.name < b.name ? -1 : 1));
     }
   }
+
 
   const defaultFilters = {
     type: category,
