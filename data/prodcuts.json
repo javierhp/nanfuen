@@ -292,35 +292,35 @@
         "code": "1205",
         "name": "Concava 16cm",
         "available": "YES",
-        "priceUSD": 75.00
+        "priceUSD": 75
     },
     {
         "type": "Tools",
         "code": "1222",
         "name": "Esferica 16cm",
         "available": "YES",
-        "priceUSD": 75.00
+        "priceUSD": 75
     },
     {
         "type": "Tools",
         "code": "2077",
         "name": "Tijera 18.5cm",
         "available": "YES",
-        "priceUSD": 47.00
+        "priceUSD": 47
     },
     {
         "type": "Tools",
         "code": "1077",
         "name": "Tijera 17.5cm",
         "available": "YES",
-        "priceUSD": 28.00
+        "priceUSD": 28
     },
     {
         "type": "Tools",
         "code": "2308",
         "name": "Corta alambre tijera 16cm",
         "available": "YES",
-        "priceUSD": 24.00
+        "priceUSD": 24
     },
     {
         "type": "tree",
@@ -330,10 +330,13 @@
         "nebari": "18",
         "priceARS": "1530000",
         "img": "CellImage",
-        "priceUSD": "1000",
+        "priceUSD": 1000,
         "available": "YES",
         "name": "Palo amarillo 2",
-        "code": "PA002"
+        "code": "PA002",
+        "discountPercentage": 20,
+        "discountStartDate": "2026-01-01T00:00:00.000Z",
+        "discountEndDate": "2026-09-18T23:59:00.000Z"
     },
     {
         "type": "tree",
@@ -346,7 +349,10 @@
         "priceUSD": "300",
         "available": "NO",
         "name": "Espinillo 1",
-        "code": "ES01"
+        "code": "ES01",
+        "discountPercentage": 20,
+        "discountStartDate": "2026-01-01T00:00:00Z",
+        "discountEndDate": "2026-09-18T23:59:59Z"
     },
     {
         "type": "tree",
@@ -359,7 +365,10 @@
         "priceUSD": "650",
         "available": "YES",
         "name": "Espinillo 2",
-        "code": "ES002"
+        "code": "ES002",
+        "discountPercentage": 20,
+        "discountStartDate": "2026-01-01T00:00:00Z",
+        "discountEndDate": "2026-09-18T23:59:59Z"
     },
     {
         "type": "tree",
@@ -372,6 +381,86 @@
         "priceUSD": "380",
         "available": "YES",
         "name": "Itoigawa 70",
-        "code": "IT070"
+        "code": "IT070",
+        "discountPercentage": 20,
+        "discountStartDate": "2026-01-01T00:00:00Z",
+        "discountEndDate": "2026-09-18T23:59:59Z"
+    },
+    {
+        "type": "tree",
+        "code": "PN101",
+        "name": "Pino negro 101",
+        "available": "YES",
+        "priceUSD": 500,
+        "tree": "Pino negro 101",
+        "tree_width": "28",
+        "tree_height": "30",
+        "nebari": "11"
+    },
+    {
+        "type": "tree",
+        "code": "PN102",
+        "name": "Pino negro 102",
+        "available": "YES",
+        "priceUSD": 450,
+        "tree": "Pino negro 102",
+        "tree_width": "26",
+        "tree_height": "23",
+        "nebari": "12"
+    },
+    {
+        "type": "tree",
+        "code": "PN103",
+        "name": "Pino negro 103",
+        "available": "YES",
+        "priceUSD": 350,
+        "tree": "Pino negro 103",
+        "tree_width": "43",
+        "tree_height": "25",
+        "nebari": "8"
+    },
+    {
+        "type": "tree",
+        "code": "PN104",
+        "name": "Pino negro 104",
+        "available": "YES",
+        "priceUSD": 440,
+        "tree": "Pino negro 104",
+        "tree_width": "25",
+        "tree_height": "23",
+        "nebari": "15"
+    },
+    {
+        "type": "tree",
+        "code": "IT100",
+        "name": "Itoigawa 100",
+        "available": "YES",
+        "priceUSD": 350,
+        "tree": "Itoigawa 100",
+        "tree_width": "50",
+        "tree_height": "38",
+        "nebari": "4"
+    },
+    {
+        "type": "tree",
+        "code": "IT101",
+        "name": "Itoigawa 101",
+        "available": "YES",
+        "priceUSD": 300,
+        "tree": "Itoigawa 101",
+        "tree_width": "40",
+        "tree_height": "24",
+        "nebari": "3"
+    },
+    {
+        "type": "tree",
+        "code": "PN105",
+        "name": "Pino negro 105",
+        "available": "YES",
+        "priceUSD": 550,
+        "tree": "Pino negro 105",
+        "tree_width": "30",
+        "tree_height": "50",
+        "nebari": "17"
     }
 ]
