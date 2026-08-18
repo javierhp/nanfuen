@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nanfuen - Product Editor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Navigation Header -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo-area">
+        <span class="logo-icon">🌿</span>
+        <div>
+          <h1 class="app-title">Nanfuen Product Editor</h1>
+          <span class="app-subtitle">Internal catalog management & discount tool</span>
+        </div>
+      </div>
+      <div class="status-indicator" id="connectionStatus">
+        <span class="status-dot"></span>
+        <span class="status-text">Connected (Port 3001)</span>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="btn btn-secondary" id="btnBackups" title="View automatic backups and restore">
+        <span class="icon">🕒</span> Backups & History
+      </button>
+      <button class="btn btn-secondary" id="btnImportExport" title="Export or Import JSON">
+        <span class="icon">⇄</span> Import / Export
+      </button>
+      <button class="btn btn-primary" id="btnNewProduct">
+        <span class="icon">+</span> New Product
+      </button>
+      <button class="btn btn-success" id="btnSaveAll" disabled>
+        <span class="icon">💾</span> Save Changes
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <!-- Unsaved Changes Banner -->
+    <div class="unsaved-banner" id="unsavedBanner" style="display: none;">
+      <div class="banner-content">
+        <span class="banner-icon">⚠️</span>
+        <span class="banner-text">You have <strong id="unsavedCount">0</strong> unsaved change(s). Remember to save to update <code>prodcuts.json</code>.</span>
+      </div>
+      <div class="banner-actions">
+        <button class="btn btn-sm btn-outline-danger" id="btnDiscardChanges">Discard</button>
+        <button class="btn btn-sm btn-success" id="btnBannerSave">Save Now</button>
+      </div>
+    </div>
+
+    <!-- Quick Stats Cards -->
+    <section class="stats-grid">
+      <div class="stat-card" data-filter="all">
+        <div class="stat-icon bg-blue">📦</div>
+        <div class="stat-info">
+          <span class="stat-label">Total Products</span>
+          <span class="stat-value" id="statTotal">0</span>
+        </div>
+      </div>
+      <div class="stat-card" data-filter="available">
+        <div class="stat-icon bg-green">✓</div>
+        <div class="stat-info">
+          <span class="stat-label">Available / In Stock</span>
+          <span class="stat-value text-green" id="statAvailable">0</span>
+        </div>
+      </div>
+      <div class="stat-card" data-filter="sold">
+        <div class="stat-icon bg-red">✕</div>
+        <div class="stat-info">
+          <span class="stat-label">Sold Out</span>
+          <span class="stat-value text-red" id="statSold">0</span>
+        </div>
+      </div>
+      <div class="stat-card" data-filter="discounted">
+        <div class="stat-icon bg-amber">🏷️</div>
+        <div class="stat-info">
+          <span class="stat-label">Active Discounts</span>
+          <span class="stat-value text-amber" id="statDiscounted">0</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toolbar: Search, Filters & Sorting -->
+    <section class="toolbar-section">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search by name, code, author, shape... (Press '/' to focus)" autocomplete="off">
+        <button class="clear-search-btn" id="btnClearSearch" style="display: none;" title="Clear search">✕</button>
+      </div>
+
+      <div class="filters-row">
+        <div class="filter-group">
+          <label for="filterType">Category:</label>
+          <select id="filterType" class="form-select">
+            <option value="all">All Categories</option>
+            <option value="Pot">Pots (Macetas)</option>
+            <option value="Tools">Tools (Herramientas)</option>
+            <option value="tree">Trees (Árboles)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterAvailability">Availability:</label>
+          <select id="filterAvailability" class="form-select">
+            <option value="all">All Stock Status</option>
+            <option value="YES">Available Only (YES)</option>
+            <option value="NO">Sold Out Only (NO)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterDiscount">Discount:</label>
+          <select id="filterDiscount" class="form-select">
+            <option value="all">All Discounts</option>
+            <option value="active">Active Now</option>
+            <option value="scheduled">Scheduled / Expired</option>
+            <option value="none">No Discount</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="sortBy">Sort by:</label>
+          <select id="sortBy" class="form-select">
+            <option value="default">Default Order</option>
+            <option value="code-asc">Code (A → Z)</option>
+            <option value="code-desc">Code (Z → A)</option>
+            <option value="name-asc">Name (A → Z)</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="discount-desc">Highest Discount %</option>
+          </select>
+        </div>
+
+        <button class="btn btn-outline" id="btnResetFilters" title="Reset all filters">Reset Filters</button>
+      </div>
+    </section>
+
+    <!-- Products Table Section -->
+    <section class="table-container">
+      <div class="table-header-info">
+        <span class="showing-count" id="showingCount">Showing 0 of 0 products</span>
+        <div class="table-legend">
+          <span class="legend-item"><span class="badge badge-yes">YES</span> Click pill to toggle stock</span>
+          <span class="legend-item"><span class="badge badge-discount">20% OFF</span> Active discount</span>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="products-table" id="productsTable">
+          <thead>
+            <tr>
+              <th style="width: 55px;">Img</th>
+              <th style="width: 80px;">Code</th>
+              <th style="width: 85px;">Type</th>
+              <th>Name & Details</th>
+              <th style="width: 110px;">Availability</th>
+              <th style="width: 110px;">Base Price</th>
+              <th style="width: 140px;">Promotion</th>
+              <th style="width: 110px;">Effective Price</th>
+              <th style="width: 120px;" class="text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody">
+            <!-- Populated via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-state-icon">🔍</div>
+        <h3>No products found</h3>
+        <p>No products match your current search and filter criteria.</p>
+        <button class="btn btn-secondary" id="btnEmptyReset">Clear Filters</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Product Edit / Create Modal -->
+  <div class="modal-overlay" id="productModal" style="display: none;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="modalTitle">Edit Product</h2>
+          <span class="modal-subtitle" id="modalSubtitle">Modify product attributes and discount campaign</span>
+        </div>
+        <button class="modal-close-btn" id="btnModalClose">✕</button>
+      </div>
+
+      <form id="productForm" class="modal-body" novalidate>
+        <!-- Form Tabs / Sections -->
+        <div class="form-section">
+          <h3 class="section-title">1. Basic Information</h3>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="fieldCode">Product Code <span class="required">*</span></label>
+              <input type="text" id="fieldCode" name="code" class="form-input" placeholder="e.g. M001, 1205, PA002" required>
+              <span class="field-hint">Unique identifier for catalog images (e.g. M001 -> /images/catalog/M001.jpg)</span>
+            </div>
+
+            <div class="form-field">
+              <label for="fieldType">Category Type <span class="required">*</span></label>
+              <select id="fieldType" name="type" class="form-select" required>
+                <option value="Pot">Pot (Maceta)</option>
+                <option value="Tools">Tools (Herramientas)</option>
+                <option value="tree">Tree (Árbol)</option>
+              </select>
+            </div>
+
+            <div class="form-field full-width">
+              <label for="fieldName">Product Name <span class="required">*</span></label>
+              <input type="text" id="fieldName" name="name" class="form-input" placeholder="e.g. Rectangular, Shibakatsu" required>
+            </div>
+
+            <div class="form-field">
+              <label for="fieldAvailable">Availability Status <span class="required">*</span></label>
+              <select id="fieldAvailable" name="available" class="form-select" required>
+                <option value="YES">YES - Available / In Stock</option>
+                <option value="NO">NO - Sold Out / Unavailable</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="fieldPriceUSD">Price (USD)</label>
+              <div class="input-prefix-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="number" id="fieldPriceUSD" name="priceUSD" class="form-input" placeholder="0.00" step="any" min="0">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="fieldPriceARS">Price (ARS)</label>
+              <div class="input-prefix-wrapper">
+                <span class="input-prefix">$</span>
+                <input type="text" id="fieldPriceARS" name="priceARS" class="form-input" placeholder="e.g. 1530000">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="fieldHasImage">Catalog Image Override</label>
+              <select id="fieldHasImage" name="hasImage" class="form-select">
+                <option value="">Default (Auto-detect by code)</option>
+                <option value="YES">Force YES</option>
+                <option value="NO">Force NO (No Image)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Category Specific Attributes -->
+        <div class="form-section" id="categoryAttributesSection">
+          <h3 class="section-title" id="categorySectionTitle">2. Pot Details</h3>
+
+          <!-- Pot Fields -->
+          <div class="form-grid category-fields" id="potFields">
+            <div class="form-field">
+              <label for="fieldPotShape">Pot Shape (Forma)</label>
+              <input type="text" id="fieldPotShape" name="potShape" class="form-input" placeholder="e.g. Rectangular, Oval, Redonda">
+            </div>
+            <div class="form-field">
+              <label for="fieldPotSize">Pot Size (Medidas cm)</label>
+              <input type="text" id="fieldPotSize" name="potSize" class="form-input" placeholder="e.g. 15.5x13x4">
+            </div>
+            <div class="form-field">
+              <label for="fieldPotColor">Color</label>
+              <input type="text" id="fieldPotColor" name="color" class="form-input" placeholder="e.g. Sin esmaltar, Azul, Rosa">
+            </div>
+            <div class="form-field">
+              <label for="fieldPotAuthor">Author / Origin</label>
+              <input type="text" id="fieldPotAuthor" name="author" class="form-input" placeholder="e.g. Shibakatsu, Japon, China">
+            </div>
+            <div class="form-field">
+              <label for="fieldPrecioYenes">Precio Yenes (¥)</label>
+              <input type="text" id="fieldPrecioYenes" name="Precio yenes" class="form-input" placeholder="e.g. 4000">
+            </div>
+          </div>
+
+          <!-- Tree Fields -->
+          <div class="form-grid category-fields" id="treeFields" style="display: none;">
+            <div class="form-field">
+              <label for="fieldTreeSpecies">Tree Species / Name</label>
+              <input type="text" id="fieldTreeSpecies" name="tree" class="form-input" placeholder="e.g. Palo amarillo 2, Itoigawa">
+            </div>
+            <div class="form-field">
+              <label for="fieldTreeWidth">Width (cm)</label>
+              <input type="text" id="fieldTreeWidth" name="tree_width" class="form-input" placeholder="e.g. 37">
+            </div>
+            <div class="form-field">
+              <label for="fieldTreeHeight">Height (cm)</label>
+              <input type="text" id="fieldTreeHeight" name="tree_height" class="form-input" placeholder="e.g. 33">
+            </div>
+            <div class="form-field">
+              <label for="fieldTreeNebari">Nebari (cm)</label>
+              <input type="text" id="fieldTreeNebari" name="nebari" class="form-input" placeholder="e.g. 18">
+            </div>
+            <div class="form-field">
+              <label for="fieldTreeImg">Image Cell Ref</label>
+              <input type="text" id="fieldTreeImg" name="img" class="form-input" placeholder="e.g. CellImage">
+            </div>
+          </div>
+
+          <!-- Tool Fields (General) -->
+          <div class="form-grid category-fields" id="toolsFields" style="display: none;">
+            <div class="field-note full-width">
+              <p>ℹ️ Tool products use standard code, name, price, and availability fields.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Promotion & Discounts -->
+        <div class="form-section discount-section">
+          <div class="section-header-flex">
+            <div>
+              <h3 class="section-title">3. Promotional Discount (Specs 01 & 02)</h3>
+              <p class="section-desc">Set temporary percentage discounts with automatic expiration date.</p>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-danger" id="btnClearDiscountBtn">Clear Discount</button>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="fieldDiscountPercentage">Discount Percentage (%)</label>
+              <div class="input-suffix-wrapper">
+                <input type="number" id="fieldDiscountPercentage" name="discountPercentage" class="form-input" placeholder="e.g. 20" min="0" max="100" step="1">
+                <span class="input-suffix">% OFF</span>
+              </div>
+              <span class="field-hint">Leave blank or 0 for no discount</span>
+            </div>
+
+            <div class="form-field">
+              <label for="fieldDiscountStartDate">Start Date & Time (Optional)</label>
+              <input type="datetime-local" id="fieldDiscountStartDate" name="discountStartDate" class="form-input">
+              <span class="field-hint">Discount activates at this moment (or immediately if empty)</span>
+            </div>
+
+            <div class="form-field">
+              <label for="fieldDiscountEndDate">End Date & Time (Optional)</label>
+              <input type="datetime-local" id="fieldDiscountEndDate" name="discountEndDate" class="form-input">
+              <span class="field-hint">Discount expires at this moment (or open-ended if empty)</span>
+            </div>
+          </div>
+
+          <!-- Live Discount Calculator Preview -->
+          <div class="discount-live-preview" id="discountLivePreview">
+            <div class="preview-header">
+              <span class="preview-badge" id="previewStatusBadge">No Active Discount</span>
+              <span class="preview-title">Live Catalog Card Preview:</span>
+            </div>
+            <div class="preview-body">
+              <div class="preview-card-mockup">
+                <div class="mockup-img-wrapper">
+                  <span class="mockup-badge" id="mockupDiscountBadge" style="display: none;">20% OFF</span>
+                  <img id="mockupImg" src="" alt="Product Preview" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                  <span class="mockup-placeholder" id="mockupPlaceholder">📷 No Image</span>
+                </div>
+                <div class="mockup-info">
+                  <div class="mockup-name" id="mockupName">Product Name</div>
+                  <div class="mockup-pricing" id="mockupPricing">
+                    <span class="mockup-effective-price">$0.00</span>
+                    <span class="mockup-original-price" style="display: none;">$0.00</span>
+                  </div>
+                  <div class="mockup-savings" id="mockupSavings"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="btnCancelModal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="btnSaveModal">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Backup & Restore Drawer / Modal -->
+  <div class="modal-overlay" id="backupsModal" style="display: none;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Backups & Version History</h2>
+          <span class="modal-subtitle">Automatic snapshots created before every save operation</span>
+        </div>
+        <button class="modal-close-btn" id="btnBackupsClose">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="backups-list-container">
+          <table class="backups-table">
+            <thead>
+              <tr>
+                <th>Backup File</th>
+                <th>Created At</th>
+                <th>Size</th>
+                <th class="text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="backupsTableBody">
+              <!-- Populated via JS -->
+            </tbody>
+          </table>
+          <div class="empty-backups" id="emptyBackups" style="display: none;">
+            <p>No backups available yet. Backups are created automatically when saving.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnCloseBackupsModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import / Export Modal -->
+  <div class="modal-overlay" id="importExportModal" style="display: none;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Import / Export Products</h2>
+          <span class="modal-subtitle">Direct JSON backup or manual data ingestion</span>
+        </div>
+        <button class="modal-close-btn" id="btnImportExportClose">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="import-export-section">
+          <h4>📥 Export Current Data</h4>
+          <p>Download the current working dataset as a <code>prodcuts.json</code> file.</p>
+          <button class="btn btn-secondary" id="btnDownloadJson">
+            <span class="icon">⬇️</span> Download prodcuts.json
+          </button>
+        </div>
+        <hr class="modal-divider">
+        <div class="import-export-section">
+          <h4>📤 Import JSON File</h4>
+          <p>Load a valid JSON file into the editor. This will update the working list in your browser.</p>
+          <input type="file" id="fileInputJson" accept=".json" style="display: none;">
+          <button class="btn btn-outline" id="btnTriggerFileInput">
+            <span class="icon">📁</span> Select JSON File...
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="btnCloseImportExportModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Preview Popup Modal -->
+  <div class="modal-overlay" id="imagePreviewModal" style="display: none;">
+    <div class="modal-dialog modal-sm image-preview-dialog">
+      <button class="modal-close-btn image-preview-close" id="btnImagePreviewClose">✕</button>
+      <div class="image-preview-content">
+        <img id="imagePreviewImg" src="" alt="Product Preview">
+        <div class="image-preview-caption" id="imagePreviewCaption"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmation Dialog Modal -->
+  <div class="modal-overlay" id="confirmModal" style="display: none;">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-header">
+        <h2 class="modal-title" id="confirmTitle">Confirm Action</h2>
+        <button class="modal-close-btn" id="btnConfirmClose">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="confirmMessage">Are you sure you want to proceed?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="btnConfirmCancel">Cancel</button>
+        <button type="button" class="btn btn-danger" id="btnConfirmOk">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
