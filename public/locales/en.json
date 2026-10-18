@@ -83,7 +83,8 @@
   "classes": {
     "formats": "These are the workshop and class formats we currently offer",
     "priceLabel": "International Prices",
-    "priceNote": "Prices are in USD. Contact us to confirm current rates."
+    "priceNote": "Prices are in USD. Contact us to confirm current rates.",
+    "notice": "Registration for virtual classes is temporarily suspended. We are renovating this section and it will be available again in early 2027."
   },
   "footer": {
     "copyright": "© 2024 Nanfuen Bonsai. All rights reserved."

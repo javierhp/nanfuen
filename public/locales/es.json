@@ -84,7 +84,8 @@
     "formats": "Estos son los formatos de talleres y clases que ofrecemos por el momento",
     "blue": "Para gente en Argentina: tomamos la cotización 'Blue' del dólar, el mismo se puede encontrar",
     "priceLabel": "Precios para Argentina",
-    "priceNote": "Los precios están en dólares (USD). Tomamos la cotización Blue del dólar."
+    "priceNote": "Los precios están en dólares (USD). Tomamos la cotización Blue del dólar.",
+    "notice": "la inscripcion de las clases virtuales se encuentran momentaneamente suspendidas momentaneamente, estamos renovando dicha seccion y volvera a estar diposnible a principios de 2027"
   },
   "footer": {
     "copyright": "© 2024 Nanfuen Bonsai. Todos los derechos reservados."

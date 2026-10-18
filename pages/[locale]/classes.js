@@ -8,8 +8,8 @@ import { useLanguage } from '../../components/i18n/LanguageContext';
 export default function Classes() {
   const { t, locale } = useLanguage();
 
-  // Virtual classes are only available in Argentina (ES locale)
-  const availablePlans = pricingData.filter(p => locale === 'es' || !p.virtual);
+  // Virtual classes are temporarily suspended
+  const availablePlans = pricingData.filter(p => !p.virtual);
   const [filteredPlans, setFilteredPlans] = useState(availablePlans);
 
   // Keep filtered plans in sync when locale changes
@@ -21,6 +21,28 @@ export default function Classes() {
   return (
     <Layout>
       <div className="container" style={{ paddingTop: 'var(--space-8)' }}>
+        <div
+          role="alert"
+          style={{
+            backgroundColor: 'var(--color-surface)',
+            borderLeft: '4px solid var(--color-secondary)',
+            borderTop: '1px solid var(--color-border)',
+            borderRight: '1px solid var(--color-border)',
+            borderBottom: '1px solid var(--color-border)',
+            borderRadius: 'var(--border-radius)',
+            padding: 'var(--space-4) var(--space-6)',
+            marginBottom: 'var(--space-6)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 'var(--space-3)'
+          }}
+        >
+          <span style={{ fontSize: '1.25rem', color: 'var(--color-secondary)', flexShrink: 0 }}>ℹ️</span>
+          <p style={{ margin: 0, color: 'var(--color-text)', fontSize: '0.95rem', lineHeight: '1.5' }}>
+            {t('classes.notice')}
+          </p>
+        </div>
+
         <p style={{ color: 'var(--color-text)' }}>{t('classes.formats')}</p>
 
         {/* Blue dollar note — only relevant for Argentina */}

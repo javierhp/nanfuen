@@ -50,7 +50,9 @@ const PlanSearchBar = ({ plans, setFilteredPlans }) => {
         }}
       >
         <option value="all">{locale === 'en' ? 'All' : 'Todos'}</option>
-        <option value="virtual">{locale === 'en' ? 'Virtual' : 'Virtuales'}</option>
+        {(!plans || plans.some((p) => p.category === 'virtual' || p.virtual)) && (
+          <option value="virtual">{locale === 'en' ? 'Virtual' : 'Virtuales'}</option>
+        )}
         <option value="in person">{locale === 'en' ? 'In Person' : 'Presenciales'}</option>
       </select>
     </div>

@@ -19,7 +19,7 @@
       "Access to over 70 recorded classes",
       "Season-focused work"
     ],
-    "enabled": true
+    "enabled": false
   },
   {
     "id": "quarterly",
@@ -43,7 +43,7 @@
       "Access to over 70 recorded classes",
       "Season-focused work"
     ],
-    "enabled": true
+    "enabled": false
   },
   {
     "id": "biannual",
@@ -67,7 +67,7 @@
       "Access to over 70 recorded classes",
       "Season-focused work"
     ],
-    "enabled": true
+    "enabled": false
   },
   {
     "id": "inPerson",
